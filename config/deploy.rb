@@ -9,3 +9,9 @@ set :scm, :git
 
 role :app, "173.45.224.41"
 role :web, "173.45.224.41"
+
+namespace :deploy do
+  task :restart do
+    run ""# do nothing 
+  end
+end

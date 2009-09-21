@@ -1,0 +1,2885 @@
+/* --------------------------------------------------------------
+   Based on work by:
+   * Olav Bjørkøy      [bjorkoy.com]
+   * Nathan Borror     [playgroundblues.com]
+   * Jeff Croft        [jeffcroft.com]
+   * Christian Metts   [mintchaos.com]
+   * Khoi Vinh         [subtraction.com]
+   -------------------------------------------------------------- */
+
+/* --------------------------------------------------------------
+   Columns
+   -------------------------------------------------------------- */
+
+/* Use this class together with the .span-x classes
+   to create any compsition of columns in a layout.
+   Nesting columns works like a charm (remember .first and .last). */
+.column { float: left; }
+* html .column { overflow-x: hidden; } /* IE6 fix */
+
+.span-2-1 { width: 29.73%; margin: 0pt 20.27%;}
+.span-2-2 { width: 100.00%; margin: 0pt 20.27%;}
+
+.append-2-1 { padding-right: 70.27%; }
+
+.prepend-2-1 { padding-left: 70.27%; }
+
+.span-3-1 { width: 17.46%; margin: 0pt 11.90%;}
+.span-3-2 { width: 58.73%; margin: 0pt 11.90%;}
+.span-3-3 { width: 100.00%; margin: 0pt 11.90%;}
+
+.append-3-1 { padding-right: 41.27%; }
+.append-3-2 { padding-right: 82.54%; }
+
+.prepend-3-1 { padding-left: 41.27%; }
+.prepend-3-2 { padding-left: 82.54%; }
+
+.span-4-1 { width: 12.36%; margin: 0pt 8.43%;}
+.span-4-2 { width: 41.57%; margin: 0pt 8.43%;}
+.span-4-3 { width: 70.79%; margin: 0pt 8.43%;}
+.span-4-4 { width: 100.00%; margin: 0pt 8.43%;}
+
+.append-4-1 { padding-right: 29.21%; }
+.append-4-2 { padding-right: 58.43%; }
+.append-4-3 { padding-right: 87.64%; }
+
+.prepend-4-1 { padding-left: 29.21%; }
+.prepend-4-2 { padding-left: 58.43%; }
+.prepend-4-3 { padding-left: 87.64%; }
+
+.span-5-1 { width: 9.57%; margin: 0pt 6.52%;}
+.span-5-2 { width: 32.17%; margin: 0pt 6.52%;}
+.span-5-3 { width: 54.78%; margin: 0pt 6.52%;}
+.span-5-4 { width: 77.39%; margin: 0pt 6.52%;}
+.span-5-5 { width: 100.00%; margin: 0pt 6.52%;}
+
+.append-5-1 { padding-right: 22.61%; }
+.append-5-2 { padding-right: 45.22%; }
+.append-5-3 { padding-right: 67.83%; }
+.append-5-4 { padding-right: 90.43%; }
+
+.prepend-5-1 { padding-left: 22.61%; }
+.prepend-5-2 { padding-left: 45.22%; }
+.prepend-5-3 { padding-left: 67.83%; }
+.prepend-5-4 { padding-left: 90.43%; }
+
+.span-6-1 { width: 7.80%; margin: 0pt 5.32%;}
+.span-6-2 { width: 26.24%; margin: 0pt 5.32%;}
+.span-6-3 { width: 44.68%; margin: 0pt 5.32%;}
+.span-6-4 { width: 63.12%; margin: 0pt 5.32%;}
+.span-6-5 { width: 81.56%; margin: 0pt 5.32%;}
+.span-6-6 { width: 100.00%; margin: 0pt 5.32%;}
+
+.append-6-1 { padding-right: 18.44%; }
+.append-6-2 { padding-right: 36.88%; }
+.append-6-3 { padding-right: 55.32%; }
+.append-6-4 { padding-right: 73.76%; }
+.append-6-5 { padding-right: 92.20%; }
+
+.prepend-6-1 { padding-left: 18.44%; }
+.prepend-6-2 { padding-left: 36.88%; }
+.prepend-6-3 { padding-left: 55.32%; }
+.prepend-6-4 { padding-left: 73.76%; }
+.prepend-6-5 { padding-left: 92.20%; }
+
+.span-7-1 { width: 6.59%; margin: 0pt 4.49%;}
+.span-7-2 { width: 22.16%; margin: 0pt 4.49%;}
+.span-7-3 { width: 37.72%; margin: 0pt 4.49%;}
+.span-7-4 { width: 53.29%; margin: 0pt 4.49%;}
+.span-7-5 { width: 68.86%; margin: 0pt 4.49%;}
+.span-7-6 { width: 84.43%; margin: 0pt 4.49%;}
+.span-7-7 { width: 100.00%; margin: 0pt 4.49%;}
+
+.append-7-1 { padding-right: 15.57%; }
+.append-7-2 { padding-right: 31.14%; }
+.append-7-3 { padding-right: 46.71%; }
+.append-7-4 { padding-right: 62.28%; }
+.append-7-5 { padding-right: 77.84%; }
+.append-7-6 { padding-right: 93.41%; }
+
+.prepend-7-1 { padding-left: 15.57%; }
+.prepend-7-2 { padding-left: 31.14%; }
+.prepend-7-3 { padding-left: 46.71%; }
+.prepend-7-4 { padding-left: 62.28%; }
+.prepend-7-5 { padding-left: 77.84%; }
+.prepend-7-6 { padding-left: 93.41%; }
+
+.span-8-1 { width: 5.70%; margin: 0pt 3.89%;}
+.span-8-2 { width: 19.17%; margin: 0pt 3.89%;}
+.span-8-3 { width: 32.64%; margin: 0pt 3.89%;}
+.span-8-4 { width: 46.11%; margin: 0pt 3.89%;}
+.span-8-5 { width: 59.59%; margin: 0pt 3.89%;}
+.span-8-6 { width: 73.06%; margin: 0pt 3.89%;}
+.span-8-7 { width: 86.53%; margin: 0pt 3.89%;}
+.span-8-8 { width: 100.00%; margin: 0pt 3.89%;}
+
+.append-8-1 { padding-right: 13.47%; }
+.append-8-2 { padding-right: 26.94%; }
+.append-8-3 { padding-right: 40.41%; }
+.append-8-4 { padding-right: 53.89%; }
+.append-8-5 { padding-right: 67.36%; }
+.append-8-6 { padding-right: 80.83%; }
+.append-8-7 { padding-right: 94.30%; }
+
+.prepend-8-1 { padding-left: 13.47%; }
+.prepend-8-2 { padding-left: 26.94%; }
+.prepend-8-3 { padding-left: 40.41%; }
+.prepend-8-4 { padding-left: 53.89%; }
+.prepend-8-5 { padding-left: 67.36%; }
+.prepend-8-6 { padding-left: 80.83%; }
+.prepend-8-7 { padding-left: 94.30%; }
+
+.span-9-1 { width: 5.02%; margin: 0pt 3.42%;}
+.span-9-2 { width: 16.89%; margin: 0pt 3.42%;}
+.span-9-3 { width: 28.77%; margin: 0pt 3.42%;}
+.span-9-4 { width: 40.64%; margin: 0pt 3.42%;}
+.span-9-5 { width: 52.51%; margin: 0pt 3.42%;}
+.span-9-6 { width: 64.38%; margin: 0pt 3.42%;}
+.span-9-7 { width: 76.26%; margin: 0pt 3.42%;}
+.span-9-8 { width: 88.13%; margin: 0pt 3.42%;}
+.span-9-9 { width: 100.00%; margin: 0pt 3.42%;}
+
+.append-9-1 { padding-right: 11.87%; }
+.append-9-2 { padding-right: 23.74%; }
+.append-9-3 { padding-right: 35.62%; }
+.append-9-4 { padding-right: 47.49%; }
+.append-9-5 { padding-right: 59.36%; }
+.append-9-6 { padding-right: 71.23%; }
+.append-9-7 { padding-right: 83.11%; }
+.append-9-8 { padding-right: 94.98%; }
+
+.prepend-9-1 { padding-left: 11.87%; }
+.prepend-9-2 { padding-left: 23.74%; }
+.prepend-9-3 { padding-left: 35.62%; }
+.prepend-9-4 { padding-left: 47.49%; }
+.prepend-9-5 { padding-left: 59.36%; }
+.prepend-9-6 { padding-left: 71.23%; }
+.prepend-9-7 { padding-left: 83.11%; }
+.prepend-9-8 { padding-left: 94.98%; }
+
+.span-10-1 { width: 4.49%; margin: 0pt 3.06%;}
+.span-10-2 { width: 15.10%; margin: 0pt 3.06%;}
+.span-10-3 { width: 25.71%; margin: 0pt 3.06%;}
+.span-10-4 { width: 36.33%; margin: 0pt 3.06%;}
+.span-10-5 { width: 46.94%; margin: 0pt 3.06%;}
+.span-10-6 { width: 57.55%; margin: 0pt 3.06%;}
+.span-10-7 { width: 68.16%; margin: 0pt 3.06%;}
+.span-10-8 { width: 78.78%; margin: 0pt 3.06%;}
+.span-10-9 { width: 89.39%; margin: 0pt 3.06%;}
+.span-10-10 { width: 100.00%; margin: 0pt 3.06%;}
+
+.append-10-1 { padding-right: 10.61%; }
+.append-10-2 { padding-right: 21.22%; }
+.append-10-3 { padding-right: 31.84%; }
+.append-10-4 { padding-right: 42.45%; }
+.append-10-5 { padding-right: 53.06%; }
+.append-10-6 { padding-right: 63.67%; }
+.append-10-7 { padding-right: 74.29%; }
+.append-10-8 { padding-right: 84.90%; }
+.append-10-9 { padding-right: 95.51%; }
+
+.prepend-10-1 { padding-left: 10.61%; }
+.prepend-10-2 { padding-left: 21.22%; }
+.prepend-10-3 { padding-left: 31.84%; }
+.prepend-10-4 { padding-left: 42.45%; }
+.prepend-10-5 { padding-left: 53.06%; }
+.prepend-10-6 { padding-left: 63.67%; }
+.prepend-10-7 { padding-left: 74.29%; }
+.prepend-10-8 { padding-left: 84.90%; }
+.prepend-10-9 { padding-left: 95.51%; }
+
+.span-11-1 { width: 4.06%; margin: 0pt 2.77%;}
+.span-11-2 { width: 13.65%; margin: 0pt 2.77%;}
+.span-11-3 { width: 23.25%; margin: 0pt 2.77%;}
+.span-11-4 { width: 32.84%; margin: 0pt 2.77%;}
+.span-11-5 { width: 42.44%; margin: 0pt 2.77%;}
+.span-11-6 { width: 52.03%; margin: 0pt 2.77%;}
+.span-11-7 { width: 61.62%; margin: 0pt 2.77%;}
+.span-11-8 { width: 71.22%; margin: 0pt 2.77%;}
+.span-11-9 { width: 80.81%; margin: 0pt 2.77%;}
+.span-11-10 { width: 90.41%; margin: 0pt 2.77%;}
+.span-11-11 { width: 100.00%; margin: 0pt 2.77%;}
+
+.append-11-1 { padding-right: 9.59%; }
+.append-11-2 { padding-right: 19.19%; }
+.append-11-3 { padding-right: 28.78%; }
+.append-11-4 { padding-right: 38.38%; }
+.append-11-5 { padding-right: 47.97%; }
+.append-11-6 { padding-right: 57.56%; }
+.append-11-7 { padding-right: 67.16%; }
+.append-11-8 { padding-right: 76.75%; }
+.append-11-9 { padding-right: 86.35%; }
+.append-11-10 { padding-right: 95.94%; }
+
+.prepend-11-1 { padding-left: 9.59%; }
+.prepend-11-2 { padding-left: 19.19%; }
+.prepend-11-3 { padding-left: 28.78%; }
+.prepend-11-4 { padding-left: 38.38%; }
+.prepend-11-5 { padding-left: 47.97%; }
+.prepend-11-6 { padding-left: 57.56%; }
+.prepend-11-7 { padding-left: 67.16%; }
+.prepend-11-8 { padding-left: 76.75%; }
+.prepend-11-9 { padding-left: 86.35%; }
+.prepend-11-10 { padding-left: 95.94%; }
+
+.span-12-1 { width: 3.70%; margin: 0pt 2.53%;}
+.span-12-2 { width: 12.46%; margin: 0pt 2.53%;}
+.span-12-3 { width: 21.21%; margin: 0pt 2.53%;}
+.span-12-4 { width: 29.97%; margin: 0pt 2.53%;}
+.span-12-5 { width: 38.72%; margin: 0pt 2.53%;}
+.span-12-6 { width: 47.47%; margin: 0pt 2.53%;}
+.span-12-7 { width: 56.23%; margin: 0pt 2.53%;}
+.span-12-8 { width: 64.98%; margin: 0pt 2.53%;}
+.span-12-9 { width: 73.74%; margin: 0pt 2.53%;}
+.span-12-10 { width: 82.49%; margin: 0pt 2.53%;}
+.span-12-11 { width: 91.25%; margin: 0pt 2.53%;}
+.span-12-12 { width: 100.00%; margin: 0pt 2.53%;}
+
+.append-12-1 { padding-right: 8.75%; }
+.append-12-2 { padding-right: 17.51%; }
+.append-12-3 { padding-right: 26.26%; }
+.append-12-4 { padding-right: 35.02%; }
+.append-12-5 { padding-right: 43.77%; }
+.append-12-6 { padding-right: 52.53%; }
+.append-12-7 { padding-right: 61.28%; }
+.append-12-8 { padding-right: 70.03%; }
+.append-12-9 { padding-right: 78.79%; }
+.append-12-10 { padding-right: 87.54%; }
+.append-12-11 { padding-right: 96.30%; }
+
+.prepend-12-1 { padding-left: 8.75%; }
+.prepend-12-2 { padding-left: 17.51%; }
+.prepend-12-3 { padding-left: 26.26%; }
+.prepend-12-4 { padding-left: 35.02%; }
+.prepend-12-5 { padding-left: 43.77%; }
+.prepend-12-6 { padding-left: 52.53%; }
+.prepend-12-7 { padding-left: 61.28%; }
+.prepend-12-8 { padding-left: 70.03%; }
+.prepend-12-9 { padding-left: 78.79%; }
+.prepend-12-10 { padding-left: 87.54%; }
+.prepend-12-11 { padding-left: 96.30%; }
+
+.span-13-1 { width: 3.41%; margin: 0pt 2.32%;}
+.span-13-2 { width: 11.46%; margin: 0pt 2.32%;}
+.span-13-3 { width: 19.50%; margin: 0pt 2.32%;}
+.span-13-4 { width: 27.55%; margin: 0pt 2.32%;}
+.span-13-5 { width: 35.60%; margin: 0pt 2.32%;}
+.span-13-6 { width: 43.65%; margin: 0pt 2.32%;}
+.span-13-7 { width: 51.70%; margin: 0pt 2.32%;}
+.span-13-8 { width: 59.75%; margin: 0pt 2.32%;}
+.span-13-9 { width: 67.80%; margin: 0pt 2.32%;}
+.span-13-10 { width: 75.85%; margin: 0pt 2.32%;}
+.span-13-11 { width: 83.90%; margin: 0pt 2.32%;}
+.span-13-12 { width: 91.95%; margin: 0pt 2.32%;}
+.span-13-13 { width: 100.00%; margin: 0pt 2.32%;}
+
+.append-13-1 { padding-right: 8.05%; }
+.append-13-2 { padding-right: 16.10%; }
+.append-13-3 { padding-right: 24.15%; }
+.append-13-4 { padding-right: 32.20%; }
+.append-13-5 { padding-right: 40.25%; }
+.append-13-6 { padding-right: 48.30%; }
+.append-13-7 { padding-right: 56.35%; }
+.append-13-8 { padding-right: 64.40%; }
+.append-13-9 { padding-right: 72.45%; }
+.append-13-10 { padding-right: 80.50%; }
+.append-13-11 { padding-right: 88.54%; }
+.append-13-12 { padding-right: 96.59%; }
+
+.prepend-13-1 { padding-left: 8.05%; }
+.prepend-13-2 { padding-left: 16.10%; }
+.prepend-13-3 { padding-left: 24.15%; }
+.prepend-13-4 { padding-left: 32.20%; }
+.prepend-13-5 { padding-left: 40.25%; }
+.prepend-13-6 { padding-left: 48.30%; }
+.prepend-13-7 { padding-left: 56.35%; }
+.prepend-13-8 { padding-left: 64.40%; }
+.prepend-13-9 { padding-left: 72.45%; }
+.prepend-13-10 { padding-left: 80.50%; }
+.prepend-13-11 { padding-left: 88.54%; }
+.prepend-13-12 { padding-left: 96.59%; }
+
+.span-14-1 { width: 3.15%; margin: 0pt 2.15%;}
+.span-14-2 { width: 10.60%; margin: 0pt 2.15%;}
+.span-14-3 { width: 18.05%; margin: 0pt 2.15%;}
+.span-14-4 { width: 25.50%; margin: 0pt 2.15%;}
+.span-14-5 { width: 32.95%; margin: 0pt 2.15%;}
+.span-14-6 { width: 40.40%; margin: 0pt 2.15%;}
+.span-14-7 { width: 47.85%; margin: 0pt 2.15%;}
+.span-14-8 { width: 55.30%; margin: 0pt 2.15%;}
+.span-14-9 { width: 62.75%; margin: 0pt 2.15%;}
+.span-14-10 { width: 70.20%; margin: 0pt 2.15%;}
+.span-14-11 { width: 77.65%; margin: 0pt 2.15%;}
+.span-14-12 { width: 85.10%; margin: 0pt 2.15%;}
+.span-14-13 { width: 92.55%; margin: 0pt 2.15%;}
+.span-14-14 { width: 100.00%; margin: 0pt 2.15%;}
+
+.append-14-1 { padding-right: 7.45%; }
+.append-14-2 { padding-right: 14.90%; }
+.append-14-3 { padding-right: 22.35%; }
+.append-14-4 { padding-right: 29.80%; }
+.append-14-5 { padding-right: 37.25%; }
+.append-14-6 { padding-right: 44.70%; }
+.append-14-7 { padding-right: 52.15%; }
+.append-14-8 { padding-right: 59.60%; }
+.append-14-9 { padding-right: 67.05%; }
+.append-14-10 { padding-right: 74.50%; }
+.append-14-11 { padding-right: 81.95%; }
+.append-14-12 { padding-right: 89.40%; }
+.append-14-13 { padding-right: 96.85%; }
+
+.prepend-14-1 { padding-left: 7.45%; }
+.prepend-14-2 { padding-left: 14.90%; }
+.prepend-14-3 { padding-left: 22.35%; }
+.prepend-14-4 { padding-left: 29.80%; }
+.prepend-14-5 { padding-left: 37.25%; }
+.prepend-14-6 { padding-left: 44.70%; }
+.prepend-14-7 { padding-left: 52.15%; }
+.prepend-14-8 { padding-left: 59.60%; }
+.prepend-14-9 { padding-left: 67.05%; }
+.prepend-14-10 { padding-left: 74.50%; }
+.prepend-14-11 { padding-left: 81.95%; }
+.prepend-14-12 { padding-left: 89.40%; }
+.prepend-14-13 { padding-left: 96.85%; }
+
+.span-15-1 { width: 2.93%; margin: 0pt 2.00%;}
+.span-15-2 { width: 9.87%; margin: 0pt 2.00%;}
+.span-15-3 { width: 16.80%; margin: 0pt 2.00%;}
+.span-15-4 { width: 23.73%; margin: 0pt 2.00%;}
+.span-15-5 { width: 30.67%; margin: 0pt 2.00%;}
+.span-15-6 { width: 37.60%; margin: 0pt 2.00%;}
+.span-15-7 { width: 44.53%; margin: 0pt 2.00%;}
+.span-15-8 { width: 51.47%; margin: 0pt 2.00%;}
+.span-15-9 { width: 58.40%; margin: 0pt 2.00%;}
+.span-15-10 { width: 65.33%; margin: 0pt 2.00%;}
+.span-15-11 { width: 72.27%; margin: 0pt 2.00%;}
+.span-15-12 { width: 79.20%; margin: 0pt 2.00%;}
+.span-15-13 { width: 86.13%; margin: 0pt 2.00%;}
+.span-15-14 { width: 93.07%; margin: 0pt 2.00%;}
+.span-15-15 { width: 100.00%; margin: 0pt 2.00%;}
+
+.append-15-1 { padding-right: 6.93%; }
+.append-15-2 { padding-right: 13.87%; }
+.append-15-3 { padding-right: 20.80%; }
+.append-15-4 { padding-right: 27.73%; }
+.append-15-5 { padding-right: 34.67%; }
+.append-15-6 { padding-right: 41.60%; }
+.append-15-7 { padding-right: 48.53%; }
+.append-15-8 { padding-right: 55.47%; }
+.append-15-9 { padding-right: 62.40%; }
+.append-15-10 { padding-right: 69.33%; }
+.append-15-11 { padding-right: 76.27%; }
+.append-15-12 { padding-right: 83.20%; }
+.append-15-13 { padding-right: 90.13%; }
+.append-15-14 { padding-right: 97.07%; }
+
+.prepend-15-1 { padding-left: 6.93%; }
+.prepend-15-2 { padding-left: 13.87%; }
+.prepend-15-3 { padding-left: 20.80%; }
+.prepend-15-4 { padding-left: 27.73%; }
+.prepend-15-5 { padding-left: 34.67%; }
+.prepend-15-6 { padding-left: 41.60%; }
+.prepend-15-7 { padding-left: 48.53%; }
+.prepend-15-8 { padding-left: 55.47%; }
+.prepend-15-9 { padding-left: 62.40%; }
+.prepend-15-10 { padding-left: 69.33%; }
+.prepend-15-11 { padding-left: 76.27%; }
+.prepend-15-12 { padding-left: 83.20%; }
+.prepend-15-13 { padding-left: 90.13%; }
+.prepend-15-14 { padding-left: 97.07%; }
+
+.span-16-1 { width: 2.74%; margin: 0pt 1.87%;}
+.span-16-2 { width: 9.23%; margin: 0pt 1.87%;}
+.span-16-3 { width: 15.71%; margin: 0pt 1.87%;}
+.span-16-4 { width: 22.19%; margin: 0pt 1.87%;}
+.span-16-5 { width: 28.68%; margin: 0pt 1.87%;}
+.span-16-6 { width: 35.16%; margin: 0pt 1.87%;}
+.span-16-7 { width: 41.65%; margin: 0pt 1.87%;}
+.span-16-8 { width: 48.13%; margin: 0pt 1.87%;}
+.span-16-9 { width: 54.61%; margin: 0pt 1.87%;}
+.span-16-10 { width: 61.10%; margin: 0pt 1.87%;}
+.span-16-11 { width: 67.58%; margin: 0pt 1.87%;}
+.span-16-12 { width: 74.06%; margin: 0pt 1.87%;}
+.span-16-13 { width: 80.55%; margin: 0pt 1.87%;}
+.span-16-14 { width: 87.03%; margin: 0pt 1.87%;}
+.span-16-15 { width: 93.52%; margin: 0pt 1.87%;}
+.span-16-16 { width: 100.00%; margin: 0pt 1.87%;}
+
+.append-16-1 { padding-right: 6.48%; }
+.append-16-2 { padding-right: 12.97%; }
+.append-16-3 { padding-right: 19.45%; }
+.append-16-4 { padding-right: 25.94%; }
+.append-16-5 { padding-right: 32.42%; }
+.append-16-6 { padding-right: 38.90%; }
+.append-16-7 { padding-right: 45.39%; }
+.append-16-8 { padding-right: 51.87%; }
+.append-16-9 { padding-right: 58.35%; }
+.append-16-10 { padding-right: 64.84%; }
+.append-16-11 { padding-right: 71.32%; }
+.append-16-12 { padding-right: 77.81%; }
+.append-16-13 { padding-right: 84.29%; }
+.append-16-14 { padding-right: 90.77%; }
+.append-16-15 { padding-right: 97.26%; }
+
+.prepend-16-1 { padding-left: 6.48%; }
+.prepend-16-2 { padding-left: 12.97%; }
+.prepend-16-3 { padding-left: 19.45%; }
+.prepend-16-4 { padding-left: 25.94%; }
+.prepend-16-5 { padding-left: 32.42%; }
+.prepend-16-6 { padding-left: 38.90%; }
+.prepend-16-7 { padding-left: 45.39%; }
+.prepend-16-8 { padding-left: 51.87%; }
+.prepend-16-9 { padding-left: 58.35%; }
+.prepend-16-10 { padding-left: 64.84%; }
+.prepend-16-11 { padding-left: 71.32%; }
+.prepend-16-12 { padding-left: 77.81%; }
+.prepend-16-13 { padding-left: 84.29%; }
+.prepend-16-14 { padding-left: 90.77%; }
+.prepend-16-15 { padding-left: 97.26%; }
+
+.span-17-1 { width: 2.58%; margin: 0pt 1.76%;}
+.span-17-2 { width: 8.67%; margin: 0pt 1.76%;}
+.span-17-3 { width: 14.75%; margin: 0pt 1.76%;}
+.span-17-4 { width: 20.84%; margin: 0pt 1.76%;}
+.span-17-5 { width: 26.93%; margin: 0pt 1.76%;}
+.span-17-6 { width: 33.02%; margin: 0pt 1.76%;}
+.span-17-7 { width: 39.11%; margin: 0pt 1.76%;}
+.span-17-8 { width: 45.20%; margin: 0pt 1.76%;}
+.span-17-9 { width: 51.29%; margin: 0pt 1.76%;}
+.span-17-10 { width: 57.38%; margin: 0pt 1.76%;}
+.span-17-11 { width: 63.47%; margin: 0pt 1.76%;}
+.span-17-12 { width: 69.56%; margin: 0pt 1.76%;}
+.span-17-13 { width: 75.64%; margin: 0pt 1.76%;}
+.span-17-14 { width: 81.73%; margin: 0pt 1.76%;}
+.span-17-15 { width: 87.82%; margin: 0pt 1.76%;}
+.span-17-16 { width: 93.91%; margin: 0pt 1.76%;}
+.span-17-17 { width: 100.00%; margin: 0pt 1.76%;}
+
+.append-17-1 { padding-right: 6.09%; }
+.append-17-2 { padding-right: 12.18%; }
+.append-17-3 { padding-right: 18.27%; }
+.append-17-4 { padding-right: 24.36%; }
+.append-17-5 { padding-right: 30.44%; }
+.append-17-6 { padding-right: 36.53%; }
+.append-17-7 { padding-right: 42.62%; }
+.append-17-8 { padding-right: 48.71%; }
+.append-17-9 { padding-right: 54.80%; }
+.append-17-10 { padding-right: 60.89%; }
+.append-17-11 { padding-right: 66.98%; }
+.append-17-12 { padding-right: 73.07%; }
+.append-17-13 { padding-right: 79.16%; }
+.append-17-14 { padding-right: 85.25%; }
+.append-17-15 { padding-right: 91.33%; }
+.append-17-16 { padding-right: 97.42%; }
+
+.prepend-17-1 { padding-left: 6.09%; }
+.prepend-17-2 { padding-left: 12.18%; }
+.prepend-17-3 { padding-left: 18.27%; }
+.prepend-17-4 { padding-left: 24.36%; }
+.prepend-17-5 { padding-left: 30.44%; }
+.prepend-17-6 { padding-left: 36.53%; }
+.prepend-17-7 { padding-left: 42.62%; }
+.prepend-17-8 { padding-left: 48.71%; }
+.prepend-17-9 { padding-left: 54.80%; }
+.prepend-17-10 { padding-left: 60.89%; }
+.prepend-17-11 { padding-left: 66.98%; }
+.prepend-17-12 { padding-left: 73.07%; }
+.prepend-17-13 { padding-left: 79.16%; }
+.prepend-17-14 { padding-left: 85.25%; }
+.prepend-17-15 { padding-left: 91.33%; }
+.prepend-17-16 { padding-left: 97.42%; }
+
+.span-18-1 { width: 2.43%; margin: 0pt 1.66%;}
+.span-18-2 { width: 8.17%; margin: 0pt 1.66%;}
+.span-18-3 { width: 13.91%; margin: 0pt 1.66%;}
+.span-18-4 { width: 19.65%; margin: 0pt 1.66%;}
+.span-18-5 { width: 25.39%; margin: 0pt 1.66%;}
+.span-18-6 { width: 31.13%; margin: 0pt 1.66%;}
+.span-18-7 { width: 36.87%; margin: 0pt 1.66%;}
+.span-18-8 { width: 42.60%; margin: 0pt 1.66%;}
+.span-18-9 { width: 48.34%; margin: 0pt 1.66%;}
+.span-18-10 { width: 54.08%; margin: 0pt 1.66%;}
+.span-18-11 { width: 59.82%; margin: 0pt 1.66%;}
+.span-18-12 { width: 65.56%; margin: 0pt 1.66%;}
+.span-18-13 { width: 71.30%; margin: 0pt 1.66%;}
+.span-18-14 { width: 77.04%; margin: 0pt 1.66%;}
+.span-18-15 { width: 82.78%; margin: 0pt 1.66%;}
+.span-18-16 { width: 88.52%; margin: 0pt 1.66%;}
+.span-18-17 { width: 94.26%; margin: 0pt 1.66%;}
+.span-18-18 { width: 100.00%; margin: 0pt 1.66%;}
+
+.append-18-1 { padding-right: 5.74%; }
+.append-18-2 { padding-right: 11.48%; }
+.append-18-3 { padding-right: 17.22%; }
+.append-18-4 { padding-right: 22.96%; }
+.append-18-5 { padding-right: 28.70%; }
+.append-18-6 { padding-right: 34.44%; }
+.append-18-7 { padding-right: 40.18%; }
+.append-18-8 { padding-right: 45.92%; }
+.append-18-9 { padding-right: 51.66%; }
+.append-18-10 { padding-right: 57.40%; }
+.append-18-11 { padding-right: 63.13%; }
+.append-18-12 { padding-right: 68.87%; }
+.append-18-13 { padding-right: 74.61%; }
+.append-18-14 { padding-right: 80.35%; }
+.append-18-15 { padding-right: 86.09%; }
+.append-18-16 { padding-right: 91.83%; }
+.append-18-17 { padding-right: 97.57%; }
+
+.prepend-18-1 { padding-left: 5.74%; }
+.prepend-18-2 { padding-left: 11.48%; }
+.prepend-18-3 { padding-left: 17.22%; }
+.prepend-18-4 { padding-left: 22.96%; }
+.prepend-18-5 { padding-left: 28.70%; }
+.prepend-18-6 { padding-left: 34.44%; }
+.prepend-18-7 { padding-left: 40.18%; }
+.prepend-18-8 { padding-left: 45.92%; }
+.prepend-18-9 { padding-left: 51.66%; }
+.prepend-18-10 { padding-left: 57.40%; }
+.prepend-18-11 { padding-left: 63.13%; }
+.prepend-18-12 { padding-left: 68.87%; }
+.prepend-18-13 { padding-left: 74.61%; }
+.prepend-18-14 { padding-left: 80.35%; }
+.prepend-18-15 { padding-left: 86.09%; }
+.prepend-18-16 { padding-left: 91.83%; }
+.prepend-18-17 { padding-left: 97.57%; }
+
+.span-19-1 { width: 2.30%; margin: 0pt 1.57%;}
+.span-19-2 { width: 7.72%; margin: 0pt 1.57%;}
+.span-19-3 { width: 13.15%; margin: 0pt 1.57%;}
+.span-19-4 { width: 18.58%; margin: 0pt 1.57%;}
+.span-19-5 { width: 24.01%; margin: 0pt 1.57%;}
+.span-19-6 { width: 29.44%; margin: 0pt 1.57%;}
+.span-19-7 { width: 34.86%; margin: 0pt 1.57%;}
+.span-19-8 { width: 40.29%; margin: 0pt 1.57%;}
+.span-19-9 { width: 45.72%; margin: 0pt 1.57%;}
+.span-19-10 { width: 51.15%; margin: 0pt 1.57%;}
+.span-19-11 { width: 56.58%; margin: 0pt 1.57%;}
+.span-19-12 { width: 62.00%; margin: 0pt 1.57%;}
+.span-19-13 { width: 67.43%; margin: 0pt 1.57%;}
+.span-19-14 { width: 72.86%; margin: 0pt 1.57%;}
+.span-19-15 { width: 78.29%; margin: 0pt 1.57%;}
+.span-19-16 { width: 83.72%; margin: 0pt 1.57%;}
+.span-19-17 { width: 89.14%; margin: 0pt 1.57%;}
+.span-19-18 { width: 94.57%; margin: 0pt 1.57%;}
+.span-19-19 { width: 100.00%; margin: 0pt 1.57%;}
+
+.append-19-1 { padding-right: 5.43%; }
+.append-19-2 { padding-right: 10.86%; }
+.append-19-3 { padding-right: 16.28%; }
+.append-19-4 { padding-right: 21.71%; }
+.append-19-5 { padding-right: 27.14%; }
+.append-19-6 { padding-right: 32.57%; }
+.append-19-7 { padding-right: 38.00%; }
+.append-19-8 { padding-right: 43.42%; }
+.append-19-9 { padding-right: 48.85%; }
+.append-19-10 { padding-right: 54.28%; }
+.append-19-11 { padding-right: 59.71%; }
+.append-19-12 { padding-right: 65.14%; }
+.append-19-13 { padding-right: 70.56%; }
+.append-19-14 { padding-right: 75.99%; }
+.append-19-15 { padding-right: 81.42%; }
+.append-19-16 { padding-right: 86.85%; }
+.append-19-17 { padding-right: 92.28%; }
+.append-19-18 { padding-right: 97.70%; }
+
+.prepend-19-1 { padding-left: 5.43%; }
+.prepend-19-2 { padding-left: 10.86%; }
+.prepend-19-3 { padding-left: 16.28%; }
+.prepend-19-4 { padding-left: 21.71%; }
+.prepend-19-5 { padding-left: 27.14%; }
+.prepend-19-6 { padding-left: 32.57%; }
+.prepend-19-7 { padding-left: 38.00%; }
+.prepend-19-8 { padding-left: 43.42%; }
+.prepend-19-9 { padding-left: 48.85%; }
+.prepend-19-10 { padding-left: 54.28%; }
+.prepend-19-11 { padding-left: 59.71%; }
+.prepend-19-12 { padding-left: 65.14%; }
+.prepend-19-13 { padding-left: 70.56%; }
+.prepend-19-14 { padding-left: 75.99%; }
+.prepend-19-15 { padding-left: 81.42%; }
+.prepend-19-16 { padding-left: 86.85%; }
+.prepend-19-17 { padding-left: 92.28%; }
+.prepend-19-18 { padding-left: 97.70%; }
+
+.span-20-1 { width: 2.18%; margin: 0pt 1.49%;}
+.span-20-2 { width: 7.33%; margin: 0pt 1.49%;}
+.span-20-3 { width: 12.48%; margin: 0pt 1.49%;}
+.span-20-4 { width: 17.62%; margin: 0pt 1.49%;}
+.span-20-5 { width: 22.77%; margin: 0pt 1.49%;}
+.span-20-6 { width: 27.92%; margin: 0pt 1.49%;}
+.span-20-7 { width: 33.07%; margin: 0pt 1.49%;}
+.span-20-8 { width: 38.22%; margin: 0pt 1.49%;}
+.span-20-9 { width: 43.37%; margin: 0pt 1.49%;}
+.span-20-10 { width: 48.51%; margin: 0pt 1.49%;}
+.span-20-11 { width: 53.66%; margin: 0pt 1.49%;}
+.span-20-12 { width: 58.81%; margin: 0pt 1.49%;}
+.span-20-13 { width: 63.96%; margin: 0pt 1.49%;}
+.span-20-14 { width: 69.11%; margin: 0pt 1.49%;}
+.span-20-15 { width: 74.26%; margin: 0pt 1.49%;}
+.span-20-16 { width: 79.41%; margin: 0pt 1.49%;}
+.span-20-17 { width: 84.55%; margin: 0pt 1.49%;}
+.span-20-18 { width: 89.70%; margin: 0pt 1.49%;}
+.span-20-19 { width: 94.85%; margin: 0pt 1.49%;}
+.span-20-20 { width: 100.00%; margin: 0pt 1.49%;}
+
+.append-20-1 { padding-right: 5.15%; }
+.append-20-2 { padding-right: 10.30%; }
+.append-20-3 { padding-right: 15.45%; }
+.append-20-4 { padding-right: 20.59%; }
+.append-20-5 { padding-right: 25.74%; }
+.append-20-6 { padding-right: 30.89%; }
+.append-20-7 { padding-right: 36.04%; }
+.append-20-8 { padding-right: 41.19%; }
+.append-20-9 { padding-right: 46.34%; }
+.append-20-10 { padding-right: 51.49%; }
+.append-20-11 { padding-right: 56.63%; }
+.append-20-12 { padding-right: 61.78%; }
+.append-20-13 { padding-right: 66.93%; }
+.append-20-14 { padding-right: 72.08%; }
+.append-20-15 { padding-right: 77.23%; }
+.append-20-16 { padding-right: 82.38%; }
+.append-20-17 { padding-right: 87.52%; }
+.append-20-18 { padding-right: 92.67%; }
+.append-20-19 { padding-right: 97.82%; }
+
+.prepend-20-1 { padding-left: 5.15%; }
+.prepend-20-2 { padding-left: 10.30%; }
+.prepend-20-3 { padding-left: 15.45%; }
+.prepend-20-4 { padding-left: 20.59%; }
+.prepend-20-5 { padding-left: 25.74%; }
+.prepend-20-6 { padding-left: 30.89%; }
+.prepend-20-7 { padding-left: 36.04%; }
+.prepend-20-8 { padding-left: 41.19%; }
+.prepend-20-9 { padding-left: 46.34%; }
+.prepend-20-10 { padding-left: 51.49%; }
+.prepend-20-11 { padding-left: 56.63%; }
+.prepend-20-12 { padding-left: 61.78%; }
+.prepend-20-13 { padding-left: 66.93%; }
+.prepend-20-14 { padding-left: 72.08%; }
+.prepend-20-15 { padding-left: 77.23%; }
+.prepend-20-16 { padding-left: 82.38%; }
+.prepend-20-17 { padding-left: 87.52%; }
+.prepend-20-18 { padding-left: 92.67%; }
+.prepend-20-19 { padding-left: 97.82%; }
+
+.span-21-1 { width: 2.07%; margin: 0pt 1.41%;}
+.span-21-2 { width: 6.97%; margin: 0pt 1.41%;}
+.span-21-3 { width: 11.86%; margin: 0pt 1.41%;}
+.span-21-4 { width: 16.76%; margin: 0pt 1.41%;}
+.span-21-5 { width: 21.66%; margin: 0pt 1.41%;}
+.span-21-6 { width: 26.55%; margin: 0pt 1.41%;}
+.span-21-7 { width: 31.45%; margin: 0pt 1.41%;}
+.span-21-8 { width: 36.35%; margin: 0pt 1.41%;}
+.span-21-9 { width: 41.24%; margin: 0pt 1.41%;}
+.span-21-10 { width: 46.14%; margin: 0pt 1.41%;}
+.span-21-11 { width: 51.04%; margin: 0pt 1.41%;}
+.span-21-12 { width: 55.93%; margin: 0pt 1.41%;}
+.span-21-13 { width: 60.83%; margin: 0pt 1.41%;}
+.span-21-14 { width: 65.73%; margin: 0pt 1.41%;}
+.span-21-15 { width: 70.62%; margin: 0pt 1.41%;}
+.span-21-16 { width: 75.52%; margin: 0pt 1.41%;}
+.span-21-17 { width: 80.41%; margin: 0pt 1.41%;}
+.span-21-18 { width: 85.31%; margin: 0pt 1.41%;}
+.span-21-19 { width: 90.21%; margin: 0pt 1.41%;}
+.span-21-20 { width: 95.10%; margin: 0pt 1.41%;}
+.span-21-21 { width: 100.00%; margin: 0pt 1.41%;}
+
+.append-21-1 { padding-right: 4.90%; }
+.append-21-2 { padding-right: 9.79%; }
+.append-21-3 { padding-right: 14.69%; }
+.append-21-4 { padding-right: 19.59%; }
+.append-21-5 { padding-right: 24.48%; }
+.append-21-6 { padding-right: 29.38%; }
+.append-21-7 { padding-right: 34.27%; }
+.append-21-8 { padding-right: 39.17%; }
+.append-21-9 { padding-right: 44.07%; }
+.append-21-10 { padding-right: 48.96%; }
+.append-21-11 { padding-right: 53.86%; }
+.append-21-12 { padding-right: 58.76%; }
+.append-21-13 { padding-right: 63.65%; }
+.append-21-14 { padding-right: 68.55%; }
+.append-21-15 { padding-right: 73.45%; }
+.append-21-16 { padding-right: 78.34%; }
+.append-21-17 { padding-right: 83.24%; }
+.append-21-18 { padding-right: 88.14%; }
+.append-21-19 { padding-right: 93.03%; }
+.append-21-20 { padding-right: 97.93%; }
+
+.prepend-21-1 { padding-left: 4.90%; }
+.prepend-21-2 { padding-left: 9.79%; }
+.prepend-21-3 { padding-left: 14.69%; }
+.prepend-21-4 { padding-left: 19.59%; }
+.prepend-21-5 { padding-left: 24.48%; }
+.prepend-21-6 { padding-left: 29.38%; }
+.prepend-21-7 { padding-left: 34.27%; }
+.prepend-21-8 { padding-left: 39.17%; }
+.prepend-21-9 { padding-left: 44.07%; }
+.prepend-21-10 { padding-left: 48.96%; }
+.prepend-21-11 { padding-left: 53.86%; }
+.prepend-21-12 { padding-left: 58.76%; }
+.prepend-21-13 { padding-left: 63.65%; }
+.prepend-21-14 { padding-left: 68.55%; }
+.prepend-21-15 { padding-left: 73.45%; }
+.prepend-21-16 { padding-left: 78.34%; }
+.prepend-21-17 { padding-left: 83.24%; }
+.prepend-21-18 { padding-left: 88.14%; }
+.prepend-21-19 { padding-left: 93.03%; }
+.prepend-21-20 { padding-left: 97.93%; }
+
+.span-22-1 { width: 1.97%; margin: 0pt 1.35%;}
+.span-22-2 { width: 6.64%; margin: 0pt 1.35%;}
+.span-22-3 { width: 11.31%; margin: 0pt 1.35%;}
+.span-22-4 { width: 15.98%; margin: 0pt 1.35%;}
+.span-22-5 { width: 20.65%; margin: 0pt 1.35%;}
+.span-22-6 { width: 25.31%; margin: 0pt 1.35%;}
+.span-22-7 { width: 29.98%; margin: 0pt 1.35%;}
+.span-22-8 { width: 34.65%; margin: 0pt 1.35%;}
+.span-22-9 { width: 39.32%; margin: 0pt 1.35%;}
+.span-22-10 { width: 43.99%; margin: 0pt 1.35%;}
+.span-22-11 { width: 48.65%; margin: 0pt 1.35%;}
+.span-22-12 { width: 53.32%; margin: 0pt 1.35%;}
+.span-22-13 { width: 57.99%; margin: 0pt 1.35%;}
+.span-22-14 { width: 62.66%; margin: 0pt 1.35%;}
+.span-22-15 { width: 67.32%; margin: 0pt 1.35%;}
+.span-22-16 { width: 71.99%; margin: 0pt 1.35%;}
+.span-22-17 { width: 76.66%; margin: 0pt 1.35%;}
+.span-22-18 { width: 81.33%; margin: 0pt 1.35%;}
+.span-22-19 { width: 86.00%; margin: 0pt 1.35%;}
+.span-22-20 { width: 90.66%; margin: 0pt 1.35%;}
+.span-22-21 { width: 95.33%; margin: 0pt 1.35%;}
+.span-22-22 { width: 100.00%; margin: 0pt 1.35%;}
+
+.append-22-1 { padding-right: 4.67%; }
+.append-22-2 { padding-right: 9.34%; }
+.append-22-3 { padding-right: 14.00%; }
+.append-22-4 { padding-right: 18.67%; }
+.append-22-5 { padding-right: 23.34%; }
+.append-22-6 { padding-right: 28.01%; }
+.append-22-7 { padding-right: 32.68%; }
+.append-22-8 { padding-right: 37.34%; }
+.append-22-9 { padding-right: 42.01%; }
+.append-22-10 { padding-right: 46.68%; }
+.append-22-11 { padding-right: 51.35%; }
+.append-22-12 { padding-right: 56.01%; }
+.append-22-13 { padding-right: 60.68%; }
+.append-22-14 { padding-right: 65.35%; }
+.append-22-15 { padding-right: 70.02%; }
+.append-22-16 { padding-right: 74.69%; }
+.append-22-17 { padding-right: 79.35%; }
+.append-22-18 { padding-right: 84.02%; }
+.append-22-19 { padding-right: 88.69%; }
+.append-22-20 { padding-right: 93.36%; }
+.append-22-21 { padding-right: 98.03%; }
+
+.prepend-22-1 { padding-left: 4.67%; }
+.prepend-22-2 { padding-left: 9.34%; }
+.prepend-22-3 { padding-left: 14.00%; }
+.prepend-22-4 { padding-left: 18.67%; }
+.prepend-22-5 { padding-left: 23.34%; }
+.prepend-22-6 { padding-left: 28.01%; }
+.prepend-22-7 { padding-left: 32.68%; }
+.prepend-22-8 { padding-left: 37.34%; }
+.prepend-22-9 { padding-left: 42.01%; }
+.prepend-22-10 { padding-left: 46.68%; }
+.prepend-22-11 { padding-left: 51.35%; }
+.prepend-22-12 { padding-left: 56.01%; }
+.prepend-22-13 { padding-left: 60.68%; }
+.prepend-22-14 { padding-left: 65.35%; }
+.prepend-22-15 { padding-left: 70.02%; }
+.prepend-22-16 { padding-left: 74.69%; }
+.prepend-22-17 { padding-left: 79.35%; }
+.prepend-22-18 { padding-left: 84.02%; }
+.prepend-22-19 { padding-left: 88.69%; }
+.prepend-22-20 { padding-left: 93.36%; }
+.prepend-22-21 { padding-left: 98.03%; }
+
+.span-23-1 { width: 1.89%; margin: 0pt 1.29%;}
+.span-23-2 { width: 6.35%; margin: 0pt 1.29%;}
+.span-23-3 { width: 10.81%; margin: 0pt 1.29%;}
+.span-23-4 { width: 15.27%; margin: 0pt 1.29%;}
+.span-23-5 { width: 19.73%; margin: 0pt 1.29%;}
+.span-23-6 { width: 24.19%; margin: 0pt 1.29%;}
+.span-23-7 { width: 28.64%; margin: 0pt 1.29%;}
+.span-23-8 { width: 33.10%; margin: 0pt 1.29%;}
+.span-23-9 { width: 37.56%; margin: 0pt 1.29%;}
+.span-23-10 { width: 42.02%; margin: 0pt 1.29%;}
+.span-23-11 { width: 46.48%; margin: 0pt 1.29%;}
+.span-23-12 { width: 50.94%; margin: 0pt 1.29%;}
+.span-23-13 { width: 55.40%; margin: 0pt 1.29%;}
+.span-23-14 { width: 59.86%; margin: 0pt 1.29%;}
+.span-23-15 { width: 64.32%; margin: 0pt 1.29%;}
+.span-23-16 { width: 68.78%; margin: 0pt 1.29%;}
+.span-23-17 { width: 73.24%; margin: 0pt 1.29%;}
+.span-23-18 { width: 77.70%; margin: 0pt 1.29%;}
+.span-23-19 { width: 82.16%; margin: 0pt 1.29%;}
+.span-23-20 { width: 86.62%; margin: 0pt 1.29%;}
+.span-23-21 { width: 91.08%; margin: 0pt 1.29%;}
+.span-23-22 { width: 95.54%; margin: 0pt 1.29%;}
+.span-23-23 { width: 100.00%; margin: 0pt 1.29%;}
+
+.append-23-1 { padding-right: 4.46%; }
+.append-23-2 { padding-right: 8.92%; }
+.append-23-3 { padding-right: 13.38%; }
+.append-23-4 { padding-right: 17.84%; }
+.append-23-5 { padding-right: 22.30%; }
+.append-23-6 { padding-right: 26.76%; }
+.append-23-7 { padding-right: 31.22%; }
+.append-23-8 { padding-right: 35.68%; }
+.append-23-9 { padding-right: 40.14%; }
+.append-23-10 { padding-right: 44.60%; }
+.append-23-11 { padding-right: 49.06%; }
+.append-23-12 { padding-right: 53.52%; }
+.append-23-13 { padding-right: 57.98%; }
+.append-23-14 { padding-right: 62.44%; }
+.append-23-15 { padding-right: 66.90%; }
+.append-23-16 { padding-right: 71.36%; }
+.append-23-17 { padding-right: 75.81%; }
+.append-23-18 { padding-right: 80.27%; }
+.append-23-19 { padding-right: 84.73%; }
+.append-23-20 { padding-right: 89.19%; }
+.append-23-21 { padding-right: 93.65%; }
+.append-23-22 { padding-right: 98.11%; }
+
+.prepend-23-1 { padding-left: 4.46%; }
+.prepend-23-2 { padding-left: 8.92%; }
+.prepend-23-3 { padding-left: 13.38%; }
+.prepend-23-4 { padding-left: 17.84%; }
+.prepend-23-5 { padding-left: 22.30%; }
+.prepend-23-6 { padding-left: 26.76%; }
+.prepend-23-7 { padding-left: 31.22%; }
+.prepend-23-8 { padding-left: 35.68%; }
+.prepend-23-9 { padding-left: 40.14%; }
+.prepend-23-10 { padding-left: 44.60%; }
+.prepend-23-11 { padding-left: 49.06%; }
+.prepend-23-12 { padding-left: 53.52%; }
+.prepend-23-13 { padding-left: 57.98%; }
+.prepend-23-14 { padding-left: 62.44%; }
+.prepend-23-15 { padding-left: 66.90%; }
+.prepend-23-16 { padding-left: 71.36%; }
+.prepend-23-17 { padding-left: 75.81%; }
+.prepend-23-18 { padding-left: 80.27%; }
+.prepend-23-19 { padding-left: 84.73%; }
+.prepend-23-20 { padding-left: 89.19%; }
+.prepend-23-21 { padding-left: 93.65%; }
+.prepend-23-22 { padding-left: 98.11%; }
+
+.span-24-1 { width: 1.81%; margin: 0pt 1.23%;}
+.span-24-2 { width: 6.08%; margin: 0pt 1.23%;}
+.span-24-3 { width: 10.34%; margin: 0pt 1.23%;}
+.span-24-4 { width: 14.61%; margin: 0pt 1.23%;}
+.span-24-5 { width: 18.88%; margin: 0pt 1.23%;}
+.span-24-6 { width: 23.15%; margin: 0pt 1.23%;}
+.span-24-7 { width: 27.42%; margin: 0pt 1.23%;}
+.span-24-8 { width: 31.69%; margin: 0pt 1.23%;}
+.span-24-9 { width: 35.96%; margin: 0pt 1.23%;}
+.span-24-10 { width: 40.23%; margin: 0pt 1.23%;}
+.span-24-11 { width: 44.50%; margin: 0pt 1.23%;}
+.span-24-12 { width: 48.77%; margin: 0pt 1.23%;}
+.span-24-13 { width: 53.04%; margin: 0pt 1.23%;}
+.span-24-14 { width: 57.31%; margin: 0pt 1.23%;}
+.span-24-15 { width: 61.58%; margin: 0pt 1.23%;}
+.span-24-16 { width: 65.85%; margin: 0pt 1.23%;}
+.span-24-17 { width: 70.11%; margin: 0pt 1.23%;}
+.span-24-18 { width: 74.38%; margin: 0pt 1.23%;}
+.span-24-19 { width: 78.65%; margin: 0pt 1.23%;}
+.span-24-20 { width: 82.92%; margin: 0pt 1.23%;}
+.span-24-21 { width: 87.19%; margin: 0pt 1.23%;}
+.span-24-22 { width: 91.46%; margin: 0pt 1.23%;}
+.span-24-23 { width: 95.73%; margin: 0pt 1.23%;}
+.span-24-24 { width: 100.00%; margin: 0pt 1.23%;}
+
+.append-24-1 { padding-right: 4.27%; }
+.append-24-2 { padding-right: 8.54%; }
+.append-24-3 { padding-right: 12.81%; }
+.append-24-4 { padding-right: 17.08%; }
+.append-24-5 { padding-right: 21.35%; }
+.append-24-6 { padding-right: 25.62%; }
+.append-24-7 { padding-right: 29.89%; }
+.append-24-8 { padding-right: 34.15%; }
+.append-24-9 { padding-right: 38.42%; }
+.append-24-10 { padding-right: 42.69%; }
+.append-24-11 { padding-right: 46.96%; }
+.append-24-12 { padding-right: 51.23%; }
+.append-24-13 { padding-right: 55.50%; }
+.append-24-14 { padding-right: 59.77%; }
+.append-24-15 { padding-right: 64.04%; }
+.append-24-16 { padding-right: 68.31%; }
+.append-24-17 { padding-right: 72.58%; }
+.append-24-18 { padding-right: 76.85%; }
+.append-24-19 { padding-right: 81.12%; }
+.append-24-20 { padding-right: 85.39%; }
+.append-24-21 { padding-right: 89.66%; }
+.append-24-22 { padding-right: 93.92%; }
+.append-24-23 { padding-right: 98.19%; }
+
+.prepend-24-1 { padding-left: 4.27%; }
+.prepend-24-2 { padding-left: 8.54%; }
+.prepend-24-3 { padding-left: 12.81%; }
+.prepend-24-4 { padding-left: 17.08%; }
+.prepend-24-5 { padding-left: 21.35%; }
+.prepend-24-6 { padding-left: 25.62%; }
+.prepend-24-7 { padding-left: 29.89%; }
+.prepend-24-8 { padding-left: 34.15%; }
+.prepend-24-9 { padding-left: 38.42%; }
+.prepend-24-10 { padding-left: 42.69%; }
+.prepend-24-11 { padding-left: 46.96%; }
+.prepend-24-12 { padding-left: 51.23%; }
+.prepend-24-13 { padding-left: 55.50%; }
+.prepend-24-14 { padding-left: 59.77%; }
+.prepend-24-15 { padding-left: 64.04%; }
+.prepend-24-16 { padding-left: 68.31%; }
+.prepend-24-17 { padding-left: 72.58%; }
+.prepend-24-18 { padding-left: 76.85%; }
+.prepend-24-19 { padding-left: 81.12%; }
+.prepend-24-20 { padding-left: 85.39%; }
+.prepend-24-21 { padding-left: 89.66%; }
+.prepend-24-22 { padding-left: 93.92%; }
+.prepend-24-23 { padding-left: 98.19%; }
+
+.span-25-1 { width: 1.73%; margin: 0pt 1.18%;}
+.span-25-2 { width: 5.83%; margin: 0pt 1.18%;}
+.span-25-3 { width: 9.92%; margin: 0pt 1.18%;}
+.span-25-4 { width: 14.02%; margin: 0pt 1.18%;}
+.span-25-5 { width: 18.11%; margin: 0pt 1.18%;}
+.span-25-6 { width: 22.20%; margin: 0pt 1.18%;}
+.span-25-7 { width: 26.30%; margin: 0pt 1.18%;}
+.span-25-8 { width: 30.39%; margin: 0pt 1.18%;}
+.span-25-9 { width: 34.49%; margin: 0pt 1.18%;}
+.span-25-10 { width: 38.58%; margin: 0pt 1.18%;}
+.span-25-11 { width: 42.68%; margin: 0pt 1.18%;}
+.span-25-12 { width: 46.77%; margin: 0pt 1.18%;}
+.span-25-13 { width: 50.87%; margin: 0pt 1.18%;}
+.span-25-14 { width: 54.96%; margin: 0pt 1.18%;}
+.span-25-15 { width: 59.06%; margin: 0pt 1.18%;}
+.span-25-16 { width: 63.15%; margin: 0pt 1.18%;}
+.span-25-17 { width: 67.24%; margin: 0pt 1.18%;}
+.span-25-18 { width: 71.34%; margin: 0pt 1.18%;}
+.span-25-19 { width: 75.43%; margin: 0pt 1.18%;}
+.span-25-20 { width: 79.53%; margin: 0pt 1.18%;}
+.span-25-21 { width: 83.62%; margin: 0pt 1.18%;}
+.span-25-22 { width: 87.72%; margin: 0pt 1.18%;}
+.span-25-23 { width: 91.81%; margin: 0pt 1.18%;}
+.span-25-24 { width: 95.91%; margin: 0pt 1.18%;}
+.span-25-25 { width: 100.00%; margin: 0pt 1.18%;}
+
+.append-25-1 { padding-right: 4.09%; }
+.append-25-2 { padding-right: 8.19%; }
+.append-25-3 { padding-right: 12.28%; }
+.append-25-4 { padding-right: 16.38%; }
+.append-25-5 { padding-right: 20.47%; }
+.append-25-6 { padding-right: 24.57%; }
+.append-25-7 { padding-right: 28.66%; }
+.append-25-8 { padding-right: 32.76%; }
+.append-25-9 { padding-right: 36.85%; }
+.append-25-10 { padding-right: 40.94%; }
+.append-25-11 { padding-right: 45.04%; }
+.append-25-12 { padding-right: 49.13%; }
+.append-25-13 { padding-right: 53.23%; }
+.append-25-14 { padding-right: 57.32%; }
+.append-25-15 { padding-right: 61.42%; }
+.append-25-16 { padding-right: 65.51%; }
+.append-25-17 { padding-right: 69.61%; }
+.append-25-18 { padding-right: 73.70%; }
+.append-25-19 { padding-right: 77.80%; }
+.append-25-20 { padding-right: 81.89%; }
+.append-25-21 { padding-right: 85.98%; }
+.append-25-22 { padding-right: 90.08%; }
+.append-25-23 { padding-right: 94.17%; }
+.append-25-24 { padding-right: 98.27%; }
+
+.prepend-25-1 { padding-left: 4.09%; }
+.prepend-25-2 { padding-left: 8.19%; }
+.prepend-25-3 { padding-left: 12.28%; }
+.prepend-25-4 { padding-left: 16.38%; }
+.prepend-25-5 { padding-left: 20.47%; }
+.prepend-25-6 { padding-left: 24.57%; }
+.prepend-25-7 { padding-left: 28.66%; }
+.prepend-25-8 { padding-left: 32.76%; }
+.prepend-25-9 { padding-left: 36.85%; }
+.prepend-25-10 { padding-left: 40.94%; }
+.prepend-25-11 { padding-left: 45.04%; }
+.prepend-25-12 { padding-left: 49.13%; }
+.prepend-25-13 { padding-left: 53.23%; }
+.prepend-25-14 { padding-left: 57.32%; }
+.prepend-25-15 { padding-left: 61.42%; }
+.prepend-25-16 { padding-left: 65.51%; }
+.prepend-25-17 { padding-left: 69.61%; }
+.prepend-25-18 { padding-left: 73.70%; }
+.prepend-25-19 { padding-left: 77.80%; }
+.prepend-25-20 { padding-left: 81.89%; }
+.prepend-25-21 { padding-left: 85.98%; }
+.prepend-25-22 { padding-left: 90.08%; }
+.prepend-25-23 { padding-left: 94.17%; }
+.prepend-25-24 { padding-left: 98.27%; }
+
+.span-26-1 { width: 1.66%; margin: 0pt 1.13%;}
+.span-26-2 { width: 5.60%; margin: 0pt 1.13%;}
+.span-26-3 { width: 9.53%; margin: 0pt 1.13%;}
+.span-26-4 { width: 13.46%; margin: 0pt 1.13%;}
+.span-26-5 { width: 17.40%; margin: 0pt 1.13%;}
+.span-26-6 { width: 21.33%; margin: 0pt 1.13%;}
+.span-26-7 { width: 25.26%; margin: 0pt 1.13%;}
+.span-26-8 { width: 29.20%; margin: 0pt 1.13%;}
+.span-26-9 { width: 33.13%; margin: 0pt 1.13%;}
+.span-26-10 { width: 37.07%; margin: 0pt 1.13%;}
+.span-26-11 { width: 41.00%; margin: 0pt 1.13%;}
+.span-26-12 { width: 44.93%; margin: 0pt 1.13%;}
+.span-26-13 { width: 48.87%; margin: 0pt 1.13%;}
+.span-26-14 { width: 52.80%; margin: 0pt 1.13%;}
+.span-26-15 { width: 56.73%; margin: 0pt 1.13%;}
+.span-26-16 { width: 60.67%; margin: 0pt 1.13%;}
+.span-26-17 { width: 64.60%; margin: 0pt 1.13%;}
+.span-26-18 { width: 68.53%; margin: 0pt 1.13%;}
+.span-26-19 { width: 72.47%; margin: 0pt 1.13%;}
+.span-26-20 { width: 76.40%; margin: 0pt 1.13%;}
+.span-26-21 { width: 80.33%; margin: 0pt 1.13%;}
+.span-26-22 { width: 84.27%; margin: 0pt 1.13%;}
+.span-26-23 { width: 88.20%; margin: 0pt 1.13%;}
+.span-26-24 { width: 92.13%; margin: 0pt 1.13%;}
+.span-26-25 { width: 96.07%; margin: 0pt 1.13%;}
+.span-26-26 { width: 100.00%; margin: 0pt 1.13%;}
+
+.append-26-1 { padding-right: 3.93%; }
+.append-26-2 { padding-right: 7.87%; }
+.append-26-3 { padding-right: 11.80%; }
+.append-26-4 { padding-right: 15.73%; }
+.append-26-5 { padding-right: 19.67%; }
+.append-26-6 { padding-right: 23.60%; }
+.append-26-7 { padding-right: 27.53%; }
+.append-26-8 { padding-right: 31.47%; }
+.append-26-9 { padding-right: 35.40%; }
+.append-26-10 { padding-right: 39.33%; }
+.append-26-11 { padding-right: 43.27%; }
+.append-26-12 { padding-right: 47.20%; }
+.append-26-13 { padding-right: 51.13%; }
+.append-26-14 { padding-right: 55.07%; }
+.append-26-15 { padding-right: 59.00%; }
+.append-26-16 { padding-right: 62.93%; }
+.append-26-17 { padding-right: 66.87%; }
+.append-26-18 { padding-right: 70.80%; }
+.append-26-19 { padding-right: 74.74%; }
+.append-26-20 { padding-right: 78.67%; }
+.append-26-21 { padding-right: 82.60%; }
+.append-26-22 { padding-right: 86.54%; }
+.append-26-23 { padding-right: 90.47%; }
+.append-26-24 { padding-right: 94.40%; }
+.append-26-25 { padding-right: 98.34%; }
+
+.prepend-26-1 { padding-left: 3.93%; }
+.prepend-26-2 { padding-left: 7.87%; }
+.prepend-26-3 { padding-left: 11.80%; }
+.prepend-26-4 { padding-left: 15.73%; }
+.prepend-26-5 { padding-left: 19.67%; }
+.prepend-26-6 { padding-left: 23.60%; }
+.prepend-26-7 { padding-left: 27.53%; }
+.prepend-26-8 { padding-left: 31.47%; }
+.prepend-26-9 { padding-left: 35.40%; }
+.prepend-26-10 { padding-left: 39.33%; }
+.prepend-26-11 { padding-left: 43.27%; }
+.prepend-26-12 { padding-left: 47.20%; }
+.prepend-26-13 { padding-left: 51.13%; }
+.prepend-26-14 { padding-left: 55.07%; }
+.prepend-26-15 { padding-left: 59.00%; }
+.prepend-26-16 { padding-left: 62.93%; }
+.prepend-26-17 { padding-left: 66.87%; }
+.prepend-26-18 { padding-left: 70.80%; }
+.prepend-26-19 { padding-left: 74.74%; }
+.prepend-26-20 { padding-left: 78.67%; }
+.prepend-26-21 { padding-left: 82.60%; }
+.prepend-26-22 { padding-left: 86.54%; }
+.prepend-26-23 { padding-left: 90.47%; }
+.prepend-26-24 { padding-left: 94.40%; }
+.prepend-26-25 { padding-left: 98.34%; }
+
+.span-27-1 { width: 1.60%; margin: 0pt 1.09%;}
+.span-27-2 { width: 5.39%; margin: 0pt 1.09%;}
+.span-27-3 { width: 9.17%; margin: 0pt 1.09%;}
+.span-27-4 { width: 12.95%; margin: 0pt 1.09%;}
+.span-27-5 { width: 16.74%; margin: 0pt 1.09%;}
+.span-27-6 { width: 20.52%; margin: 0pt 1.09%;}
+.span-27-7 { width: 24.31%; margin: 0pt 1.09%;}
+.span-27-8 { width: 28.09%; margin: 0pt 1.09%;}
+.span-27-9 { width: 31.88%; margin: 0pt 1.09%;}
+.span-27-10 { width: 35.66%; margin: 0pt 1.09%;}
+.span-27-11 { width: 39.45%; margin: 0pt 1.09%;}
+.span-27-12 { width: 43.23%; margin: 0pt 1.09%;}
+.span-27-13 { width: 47.02%; margin: 0pt 1.09%;}
+.span-27-14 { width: 50.80%; margin: 0pt 1.09%;}
+.span-27-15 { width: 54.59%; margin: 0pt 1.09%;}
+.span-27-16 { width: 58.37%; margin: 0pt 1.09%;}
+.span-27-17 { width: 62.15%; margin: 0pt 1.09%;}
+.span-27-18 { width: 65.94%; margin: 0pt 1.09%;}
+.span-27-19 { width: 69.72%; margin: 0pt 1.09%;}
+.span-27-20 { width: 73.51%; margin: 0pt 1.09%;}
+.span-27-21 { width: 77.29%; margin: 0pt 1.09%;}
+.span-27-22 { width: 81.08%; margin: 0pt 1.09%;}
+.span-27-23 { width: 84.86%; margin: 0pt 1.09%;}
+.span-27-24 { width: 88.65%; margin: 0pt 1.09%;}
+.span-27-25 { width: 92.43%; margin: 0pt 1.09%;}
+.span-27-26 { width: 96.22%; margin: 0pt 1.09%;}
+.span-27-27 { width: 100.00%; margin: 0pt 1.09%;}
+
+.append-27-1 { padding-right: 3.78%; }
+.append-27-2 { padding-right: 7.57%; }
+.append-27-3 { padding-right: 11.35%; }
+.append-27-4 { padding-right: 15.14%; }
+.append-27-5 { padding-right: 18.92%; }
+.append-27-6 { padding-right: 22.71%; }
+.append-27-7 { padding-right: 26.49%; }
+.append-27-8 { padding-right: 30.28%; }
+.append-27-9 { padding-right: 34.06%; }
+.append-27-10 { padding-right: 37.85%; }
+.append-27-11 { padding-right: 41.63%; }
+.append-27-12 { padding-right: 45.41%; }
+.append-27-13 { padding-right: 49.20%; }
+.append-27-14 { padding-right: 52.98%; }
+.append-27-15 { padding-right: 56.77%; }
+.append-27-16 { padding-right: 60.55%; }
+.append-27-17 { padding-right: 64.34%; }
+.append-27-18 { padding-right: 68.12%; }
+.append-27-19 { padding-right: 71.91%; }
+.append-27-20 { padding-right: 75.69%; }
+.append-27-21 { padding-right: 79.48%; }
+.append-27-22 { padding-right: 83.26%; }
+.append-27-23 { padding-right: 87.05%; }
+.append-27-24 { padding-right: 90.83%; }
+.append-27-25 { padding-right: 94.61%; }
+.append-27-26 { padding-right: 98.40%; }
+
+.prepend-27-1 { padding-left: 3.78%; }
+.prepend-27-2 { padding-left: 7.57%; }
+.prepend-27-3 { padding-left: 11.35%; }
+.prepend-27-4 { padding-left: 15.14%; }
+.prepend-27-5 { padding-left: 18.92%; }
+.prepend-27-6 { padding-left: 22.71%; }
+.prepend-27-7 { padding-left: 26.49%; }
+.prepend-27-8 { padding-left: 30.28%; }
+.prepend-27-9 { padding-left: 34.06%; }
+.prepend-27-10 { padding-left: 37.85%; }
+.prepend-27-11 { padding-left: 41.63%; }
+.prepend-27-12 { padding-left: 45.41%; }
+.prepend-27-13 { padding-left: 49.20%; }
+.prepend-27-14 { padding-left: 52.98%; }
+.prepend-27-15 { padding-left: 56.77%; }
+.prepend-27-16 { padding-left: 60.55%; }
+.prepend-27-17 { padding-left: 64.34%; }
+.prepend-27-18 { padding-left: 68.12%; }
+.prepend-27-19 { padding-left: 71.91%; }
+.prepend-27-20 { padding-left: 75.69%; }
+.prepend-27-21 { padding-left: 79.48%; }
+.prepend-27-22 { padding-left: 83.26%; }
+.prepend-27-23 { padding-left: 87.05%; }
+.prepend-27-24 { padding-left: 90.83%; }
+.prepend-27-25 { padding-left: 94.61%; }
+.prepend-27-26 { padding-left: 98.40%; }
+
+.span-28-1 { width: 1.54%; margin: 0pt 1.05%;}
+.span-28-2 { width: 5.19%; margin: 0pt 1.05%;}
+.span-28-3 { width: 8.84%; margin: 0pt 1.05%;}
+.span-28-4 { width: 12.48%; margin: 0pt 1.05%;}
+.span-28-5 { width: 16.13%; margin: 0pt 1.05%;}
+.span-28-6 { width: 19.78%; margin: 0pt 1.05%;}
+.span-28-7 { width: 23.42%; margin: 0pt 1.05%;}
+.span-28-8 { width: 27.07%; margin: 0pt 1.05%;}
+.span-28-9 { width: 30.72%; margin: 0pt 1.05%;}
+.span-28-10 { width: 34.36%; margin: 0pt 1.05%;}
+.span-28-11 { width: 38.01%; margin: 0pt 1.05%;}
+.span-28-12 { width: 41.65%; margin: 0pt 1.05%;}
+.span-28-13 { width: 45.30%; margin: 0pt 1.05%;}
+.span-28-14 { width: 48.95%; margin: 0pt 1.05%;}
+.span-28-15 { width: 52.59%; margin: 0pt 1.05%;}
+.span-28-16 { width: 56.24%; margin: 0pt 1.05%;}
+.span-28-17 { width: 59.89%; margin: 0pt 1.05%;}
+.span-28-18 { width: 63.53%; margin: 0pt 1.05%;}
+.span-28-19 { width: 67.18%; margin: 0pt 1.05%;}
+.span-28-20 { width: 70.83%; margin: 0pt 1.05%;}
+.span-28-21 { width: 74.47%; margin: 0pt 1.05%;}
+.span-28-22 { width: 78.12%; margin: 0pt 1.05%;}
+.span-28-23 { width: 81.77%; margin: 0pt 1.05%;}
+.span-28-24 { width: 85.41%; margin: 0pt 1.05%;}
+.span-28-25 { width: 89.06%; margin: 0pt 1.05%;}
+.span-28-26 { width: 92.71%; margin: 0pt 1.05%;}
+.span-28-27 { width: 96.35%; margin: 0pt 1.05%;}
+.span-28-28 { width: 100.00%; margin: 0pt 1.05%;}
+
+.append-28-1 { padding-right: 3.65%; }
+.append-28-2 { padding-right: 7.29%; }
+.append-28-3 { padding-right: 10.94%; }
+.append-28-4 { padding-right: 14.59%; }
+.append-28-5 { padding-right: 18.23%; }
+.append-28-6 { padding-right: 21.88%; }
+.append-28-7 { padding-right: 25.53%; }
+.append-28-8 { padding-right: 29.17%; }
+.append-28-9 { padding-right: 32.82%; }
+.append-28-10 { padding-right: 36.47%; }
+.append-28-11 { padding-right: 40.11%; }
+.append-28-12 { padding-right: 43.76%; }
+.append-28-13 { padding-right: 47.41%; }
+.append-28-14 { padding-right: 51.05%; }
+.append-28-15 { padding-right: 54.70%; }
+.append-28-16 { padding-right: 58.35%; }
+.append-28-17 { padding-right: 61.99%; }
+.append-28-18 { padding-right: 65.64%; }
+.append-28-19 { padding-right: 69.28%; }
+.append-28-20 { padding-right: 72.93%; }
+.append-28-21 { padding-right: 76.58%; }
+.append-28-22 { padding-right: 80.22%; }
+.append-28-23 { padding-right: 83.87%; }
+.append-28-24 { padding-right: 87.52%; }
+.append-28-25 { padding-right: 91.16%; }
+.append-28-26 { padding-right: 94.81%; }
+.append-28-27 { padding-right: 98.46%; }
+
+.prepend-28-1 { padding-left: 3.65%; }
+.prepend-28-2 { padding-left: 7.29%; }
+.prepend-28-3 { padding-left: 10.94%; }
+.prepend-28-4 { padding-left: 14.59%; }
+.prepend-28-5 { padding-left: 18.23%; }
+.prepend-28-6 { padding-left: 21.88%; }
+.prepend-28-7 { padding-left: 25.53%; }
+.prepend-28-8 { padding-left: 29.17%; }
+.prepend-28-9 { padding-left: 32.82%; }
+.prepend-28-10 { padding-left: 36.47%; }
+.prepend-28-11 { padding-left: 40.11%; }
+.prepend-28-12 { padding-left: 43.76%; }
+.prepend-28-13 { padding-left: 47.41%; }
+.prepend-28-14 { padding-left: 51.05%; }
+.prepend-28-15 { padding-left: 54.70%; }
+.prepend-28-16 { padding-left: 58.35%; }
+.prepend-28-17 { padding-left: 61.99%; }
+.prepend-28-18 { padding-left: 65.64%; }
+.prepend-28-19 { padding-left: 69.28%; }
+.prepend-28-20 { padding-left: 72.93%; }
+.prepend-28-21 { padding-left: 76.58%; }
+.prepend-28-22 { padding-left: 80.22%; }
+.prepend-28-23 { padding-left: 83.87%; }
+.prepend-28-24 { padding-left: 87.52%; }
+.prepend-28-25 { padding-left: 91.16%; }
+.prepend-28-26 { padding-left: 94.81%; }
+.prepend-28-27 { padding-left: 98.46%; }
+
+.span-29-1 { width: 1.49%; margin: 0pt 1.01%;}
+.span-29-2 { width: 5.01%; margin: 0pt 1.01%;}
+.span-29-3 { width: 8.53%; margin: 0pt 1.01%;}
+.span-29-4 { width: 12.04%; margin: 0pt 1.01%;}
+.span-29-5 { width: 15.56%; margin: 0pt 1.01%;}
+.span-29-6 { width: 19.08%; margin: 0pt 1.01%;}
+.span-29-7 { width: 22.60%; margin: 0pt 1.01%;}
+.span-29-8 { width: 26.12%; margin: 0pt 1.01%;}
+.span-29-9 { width: 29.63%; margin: 0pt 1.01%;}
+.span-29-10 { width: 33.15%; margin: 0pt 1.01%;}
+.span-29-11 { width: 36.67%; margin: 0pt 1.01%;}
+.span-29-12 { width: 40.19%; margin: 0pt 1.01%;}
+.span-29-13 { width: 43.71%; margin: 0pt 1.01%;}
+.span-29-14 { width: 47.23%; margin: 0pt 1.01%;}
+.span-29-15 { width: 50.74%; margin: 0pt 1.01%;}
+.span-29-16 { width: 54.26%; margin: 0pt 1.01%;}
+.span-29-17 { width: 57.78%; margin: 0pt 1.01%;}
+.span-29-18 { width: 61.30%; margin: 0pt 1.01%;}
+.span-29-19 { width: 64.82%; margin: 0pt 1.01%;}
+.span-29-20 { width: 68.34%; margin: 0pt 1.01%;}
+.span-29-21 { width: 71.85%; margin: 0pt 1.01%;}
+.span-29-22 { width: 75.37%; margin: 0pt 1.01%;}
+.span-29-23 { width: 78.89%; margin: 0pt 1.01%;}
+.span-29-24 { width: 82.41%; margin: 0pt 1.01%;}
+.span-29-25 { width: 85.93%; margin: 0pt 1.01%;}
+.span-29-26 { width: 89.45%; margin: 0pt 1.01%;}
+.span-29-27 { width: 92.96%; margin: 0pt 1.01%;}
+.span-29-28 { width: 96.48%; margin: 0pt 1.01%;}
+.span-29-29 { width: 100.00%; margin: 0pt 1.01%;}
+
+.append-29-1 { padding-right: 3.52%; }
+.append-29-2 { padding-right: 7.04%; }
+.append-29-3 { padding-right: 10.55%; }
+.append-29-4 { padding-right: 14.07%; }
+.append-29-5 { padding-right: 17.59%; }
+.append-29-6 { padding-right: 21.11%; }
+.append-29-7 { padding-right: 24.63%; }
+.append-29-8 { padding-right: 28.15%; }
+.append-29-9 { padding-right: 31.66%; }
+.append-29-10 { padding-right: 35.18%; }
+.append-29-11 { padding-right: 38.70%; }
+.append-29-12 { padding-right: 42.22%; }
+.append-29-13 { padding-right: 45.74%; }
+.append-29-14 { padding-right: 49.26%; }
+.append-29-15 { padding-right: 52.77%; }
+.append-29-16 { padding-right: 56.29%; }
+.append-29-17 { padding-right: 59.81%; }
+.append-29-18 { padding-right: 63.33%; }
+.append-29-19 { padding-right: 66.85%; }
+.append-29-20 { padding-right: 70.37%; }
+.append-29-21 { padding-right: 73.88%; }
+.append-29-22 { padding-right: 77.40%; }
+.append-29-23 { padding-right: 80.92%; }
+.append-29-24 { padding-right: 84.44%; }
+.append-29-25 { padding-right: 87.96%; }
+.append-29-26 { padding-right: 91.47%; }
+.append-29-27 { padding-right: 94.99%; }
+.append-29-28 { padding-right: 98.51%; }
+
+.prepend-29-1 { padding-left: 3.52%; }
+.prepend-29-2 { padding-left: 7.04%; }
+.prepend-29-3 { padding-left: 10.55%; }
+.prepend-29-4 { padding-left: 14.07%; }
+.prepend-29-5 { padding-left: 17.59%; }
+.prepend-29-6 { padding-left: 21.11%; }
+.prepend-29-7 { padding-left: 24.63%; }
+.prepend-29-8 { padding-left: 28.15%; }
+.prepend-29-9 { padding-left: 31.66%; }
+.prepend-29-10 { padding-left: 35.18%; }
+.prepend-29-11 { padding-left: 38.70%; }
+.prepend-29-12 { padding-left: 42.22%; }
+.prepend-29-13 { padding-left: 45.74%; }
+.prepend-29-14 { padding-left: 49.26%; }
+.prepend-29-15 { padding-left: 52.77%; }
+.prepend-29-16 { padding-left: 56.29%; }
+.prepend-29-17 { padding-left: 59.81%; }
+.prepend-29-18 { padding-left: 63.33%; }
+.prepend-29-19 { padding-left: 66.85%; }
+.prepend-29-20 { padding-left: 70.37%; }
+.prepend-29-21 { padding-left: 73.88%; }
+.prepend-29-22 { padding-left: 77.40%; }
+.prepend-29-23 { padding-left: 80.92%; }
+.prepend-29-24 { padding-left: 84.44%; }
+.prepend-29-25 { padding-left: 87.96%; }
+.prepend-29-26 { padding-left: 91.47%; }
+.prepend-29-27 { padding-left: 94.99%; }
+.prepend-29-28 { padding-left: 98.51%; }
+
+.span-30-1 { width: 1.44%; margin: 0pt 0.98%;}
+.span-30-2 { width: 4.84%; margin: 0pt 0.98%;}
+.span-30-3 { width: 8.24%; margin: 0pt 0.98%;}
+.span-30-4 { width: 11.63%; margin: 0pt 0.98%;}
+.span-30-5 { width: 15.03%; margin: 0pt 0.98%;}
+.span-30-6 { width: 18.43%; margin: 0pt 0.98%;}
+.span-30-7 { width: 21.83%; margin: 0pt 0.98%;}
+.span-30-8 { width: 25.23%; margin: 0pt 0.98%;}
+.span-30-9 { width: 28.63%; margin: 0pt 0.98%;}
+.span-30-10 { width: 32.03%; margin: 0pt 0.98%;}
+.span-30-11 { width: 35.42%; margin: 0pt 0.98%;}
+.span-30-12 { width: 38.82%; margin: 0pt 0.98%;}
+.span-30-13 { width: 42.22%; margin: 0pt 0.98%;}
+.span-30-14 { width: 45.62%; margin: 0pt 0.98%;}
+.span-30-15 { width: 49.02%; margin: 0pt 0.98%;}
+.span-30-16 { width: 52.42%; margin: 0pt 0.98%;}
+.span-30-17 { width: 55.82%; margin: 0pt 0.98%;}
+.span-30-18 { width: 59.22%; margin: 0pt 0.98%;}
+.span-30-19 { width: 62.61%; margin: 0pt 0.98%;}
+.span-30-20 { width: 66.01%; margin: 0pt 0.98%;}
+.span-30-21 { width: 69.41%; margin: 0pt 0.98%;}
+.span-30-22 { width: 72.81%; margin: 0pt 0.98%;}
+.span-30-23 { width: 76.21%; margin: 0pt 0.98%;}
+.span-30-24 { width: 79.61%; margin: 0pt 0.98%;}
+.span-30-25 { width: 83.01%; margin: 0pt 0.98%;}
+.span-30-26 { width: 86.41%; margin: 0pt 0.98%;}
+.span-30-27 { width: 89.80%; margin: 0pt 0.98%;}
+.span-30-28 { width: 93.20%; margin: 0pt 0.98%;}
+.span-30-29 { width: 96.60%; margin: 0pt 0.98%;}
+.span-30-30 { width: 100.00%; margin: 0pt 0.98%;}
+
+.append-30-1 { padding-right: 3.40%; }
+.append-30-2 { padding-right: 6.80%; }
+.append-30-3 { padding-right: 10.20%; }
+.append-30-4 { padding-right: 13.59%; }
+.append-30-5 { padding-right: 16.99%; }
+.append-30-6 { padding-right: 20.39%; }
+.append-30-7 { padding-right: 23.79%; }
+.append-30-8 { padding-right: 27.19%; }
+.append-30-9 { padding-right: 30.59%; }
+.append-30-10 { padding-right: 33.99%; }
+.append-30-11 { padding-right: 37.39%; }
+.append-30-12 { padding-right: 40.78%; }
+.append-30-13 { padding-right: 44.18%; }
+.append-30-14 { padding-right: 47.58%; }
+.append-30-15 { padding-right: 50.98%; }
+.append-30-16 { padding-right: 54.38%; }
+.append-30-17 { padding-right: 57.78%; }
+.append-30-18 { padding-right: 61.18%; }
+.append-30-19 { padding-right: 64.58%; }
+.append-30-20 { padding-right: 67.97%; }
+.append-30-21 { padding-right: 71.37%; }
+.append-30-22 { padding-right: 74.77%; }
+.append-30-23 { padding-right: 78.17%; }
+.append-30-24 { padding-right: 81.57%; }
+.append-30-25 { padding-right: 84.97%; }
+.append-30-26 { padding-right: 88.37%; }
+.append-30-27 { padding-right: 91.76%; }
+.append-30-28 { padding-right: 95.16%; }
+.append-30-29 { padding-right: 98.56%; }
+
+.prepend-30-1 { padding-left: 3.40%; }
+.prepend-30-2 { padding-left: 6.80%; }
+.prepend-30-3 { padding-left: 10.20%; }
+.prepend-30-4 { padding-left: 13.59%; }
+.prepend-30-5 { padding-left: 16.99%; }
+.prepend-30-6 { padding-left: 20.39%; }
+.prepend-30-7 { padding-left: 23.79%; }
+.prepend-30-8 { padding-left: 27.19%; }
+.prepend-30-9 { padding-left: 30.59%; }
+.prepend-30-10 { padding-left: 33.99%; }
+.prepend-30-11 { padding-left: 37.39%; }
+.prepend-30-12 { padding-left: 40.78%; }
+.prepend-30-13 { padding-left: 44.18%; }
+.prepend-30-14 { padding-left: 47.58%; }
+.prepend-30-15 { padding-left: 50.98%; }
+.prepend-30-16 { padding-left: 54.38%; }
+.prepend-30-17 { padding-left: 57.78%; }
+.prepend-30-18 { padding-left: 61.18%; }
+.prepend-30-19 { padding-left: 64.58%; }
+.prepend-30-20 { padding-left: 67.97%; }
+.prepend-30-21 { padding-left: 71.37%; }
+.prepend-30-22 { padding-left: 74.77%; }
+.prepend-30-23 { padding-left: 78.17%; }
+.prepend-30-24 { padding-left: 81.57%; }
+.prepend-30-25 { padding-left: 84.97%; }
+.prepend-30-26 { padding-left: 88.37%; }
+.prepend-30-27 { padding-left: 91.76%; }
+.prepend-30-28 { padding-left: 95.16%; }
+.prepend-30-29 { padding-left: 98.56%; }
+
+.span-31-1 { width: 1.39%; margin: 0pt 0.95%;}
+.span-31-2 { width: 4.68%; margin: 0pt 0.95%;}
+.span-31-3 { width: 7.96%; margin: 0pt 0.95%;}
+.span-31-4 { width: 11.25%; margin: 0pt 0.95%;}
+.span-31-5 { width: 14.54%; margin: 0pt 0.95%;}
+.span-31-6 { width: 17.83%; margin: 0pt 0.95%;}
+.span-31-7 { width: 21.11%; margin: 0pt 0.95%;}
+.span-31-8 { width: 24.40%; margin: 0pt 0.95%;}
+.span-31-9 { width: 27.69%; margin: 0pt 0.95%;}
+.span-31-10 { width: 30.97%; margin: 0pt 0.95%;}
+.span-31-11 { width: 34.26%; margin: 0pt 0.95%;}
+.span-31-12 { width: 37.55%; margin: 0pt 0.95%;}
+.span-31-13 { width: 40.83%; margin: 0pt 0.95%;}
+.span-31-14 { width: 44.12%; margin: 0pt 0.95%;}
+.span-31-15 { width: 47.41%; margin: 0pt 0.95%;}
+.span-31-16 { width: 50.70%; margin: 0pt 0.95%;}
+.span-31-17 { width: 53.98%; margin: 0pt 0.95%;}
+.span-31-18 { width: 57.27%; margin: 0pt 0.95%;}
+.span-31-19 { width: 60.56%; margin: 0pt 0.95%;}
+.span-31-20 { width: 63.84%; margin: 0pt 0.95%;}
+.span-31-21 { width: 67.13%; margin: 0pt 0.95%;}
+.span-31-22 { width: 70.42%; margin: 0pt 0.95%;}
+.span-31-23 { width: 73.70%; margin: 0pt 0.95%;}
+.span-31-24 { width: 76.99%; margin: 0pt 0.95%;}
+.span-31-25 { width: 80.28%; margin: 0pt 0.95%;}
+.span-31-26 { width: 83.57%; margin: 0pt 0.95%;}
+.span-31-27 { width: 86.85%; margin: 0pt 0.95%;}
+.span-31-28 { width: 90.14%; margin: 0pt 0.95%;}
+.span-31-29 { width: 93.43%; margin: 0pt 0.95%;}
+.span-31-30 { width: 96.71%; margin: 0pt 0.95%;}
+.span-31-31 { width: 100.00%; margin: 0pt 0.95%;}
+
+.append-31-1 { padding-right: 3.29%; }
+.append-31-2 { padding-right: 6.57%; }
+.append-31-3 { padding-right: 9.86%; }
+.append-31-4 { padding-right: 13.15%; }
+.append-31-5 { padding-right: 16.43%; }
+.append-31-6 { padding-right: 19.72%; }
+.append-31-7 { padding-right: 23.01%; }
+.append-31-8 { padding-right: 26.30%; }
+.append-31-9 { padding-right: 29.58%; }
+.append-31-10 { padding-right: 32.87%; }
+.append-31-11 { padding-right: 36.16%; }
+.append-31-12 { padding-right: 39.44%; }
+.append-31-13 { padding-right: 42.73%; }
+.append-31-14 { padding-right: 46.02%; }
+.append-31-15 { padding-right: 49.30%; }
+.append-31-16 { padding-right: 52.59%; }
+.append-31-17 { padding-right: 55.88%; }
+.append-31-18 { padding-right: 59.17%; }
+.append-31-19 { padding-right: 62.45%; }
+.append-31-20 { padding-right: 65.74%; }
+.append-31-21 { padding-right: 69.03%; }
+.append-31-22 { padding-right: 72.31%; }
+.append-31-23 { padding-right: 75.60%; }
+.append-31-24 { padding-right: 78.89%; }
+.append-31-25 { padding-right: 82.17%; }
+.append-31-26 { padding-right: 85.46%; }
+.append-31-27 { padding-right: 88.75%; }
+.append-31-28 { padding-right: 92.04%; }
+.append-31-29 { padding-right: 95.32%; }
+.append-31-30 { padding-right: 98.61%; }
+
+.prepend-31-1 { padding-left: 3.29%; }
+.prepend-31-2 { padding-left: 6.57%; }
+.prepend-31-3 { padding-left: 9.86%; }
+.prepend-31-4 { padding-left: 13.15%; }
+.prepend-31-5 { padding-left: 16.43%; }
+.prepend-31-6 { padding-left: 19.72%; }
+.prepend-31-7 { padding-left: 23.01%; }
+.prepend-31-8 { padding-left: 26.30%; }
+.prepend-31-9 { padding-left: 29.58%; }
+.prepend-31-10 { padding-left: 32.87%; }
+.prepend-31-11 { padding-left: 36.16%; }
+.prepend-31-12 { padding-left: 39.44%; }
+.prepend-31-13 { padding-left: 42.73%; }
+.prepend-31-14 { padding-left: 46.02%; }
+.prepend-31-15 { padding-left: 49.30%; }
+.prepend-31-16 { padding-left: 52.59%; }
+.prepend-31-17 { padding-left: 55.88%; }
+.prepend-31-18 { padding-left: 59.17%; }
+.prepend-31-19 { padding-left: 62.45%; }
+.prepend-31-20 { padding-left: 65.74%; }
+.prepend-31-21 { padding-left: 69.03%; }
+.prepend-31-22 { padding-left: 72.31%; }
+.prepend-31-23 { padding-left: 75.60%; }
+.prepend-31-24 { padding-left: 78.89%; }
+.prepend-31-25 { padding-left: 82.17%; }
+.prepend-31-26 { padding-left: 85.46%; }
+.prepend-31-27 { padding-left: 88.75%; }
+.prepend-31-28 { padding-left: 92.04%; }
+.prepend-31-29 { padding-left: 95.32%; }
+.prepend-31-30 { padding-left: 98.61%; }
+
+.span-32-1 { width: 1.35%; margin: 0pt 0.92%;}
+.span-32-2 { width: 4.53%; margin: 0pt 0.92%;}
+.span-32-3 { width: 7.71%; margin: 0pt 0.92%;}
+.span-32-4 { width: 10.89%; margin: 0pt 0.92%;}
+.span-32-5 { width: 14.08%; margin: 0pt 0.92%;}
+.span-32-6 { width: 17.26%; margin: 0pt 0.92%;}
+.span-32-7 { width: 20.44%; margin: 0pt 0.92%;}
+.span-32-8 { width: 23.62%; margin: 0pt 0.92%;}
+.span-32-9 { width: 26.81%; margin: 0pt 0.92%;}
+.span-32-10 { width: 29.99%; margin: 0pt 0.92%;}
+.span-32-11 { width: 33.17%; margin: 0pt 0.92%;}
+.span-32-12 { width: 36.35%; margin: 0pt 0.92%;}
+.span-32-13 { width: 39.53%; margin: 0pt 0.92%;}
+.span-32-14 { width: 42.72%; margin: 0pt 0.92%;}
+.span-32-15 { width: 45.90%; margin: 0pt 0.92%;}
+.span-32-16 { width: 49.08%; margin: 0pt 0.92%;}
+.span-32-17 { width: 52.26%; margin: 0pt 0.92%;}
+.span-32-18 { width: 55.45%; margin: 0pt 0.92%;}
+.span-32-19 { width: 58.63%; margin: 0pt 0.92%;}
+.span-32-20 { width: 61.81%; margin: 0pt 0.92%;}
+.span-32-21 { width: 64.99%; margin: 0pt 0.92%;}
+.span-32-22 { width: 68.18%; margin: 0pt 0.92%;}
+.span-32-23 { width: 71.36%; margin: 0pt 0.92%;}
+.span-32-24 { width: 74.54%; margin: 0pt 0.92%;}
+.span-32-25 { width: 77.72%; margin: 0pt 0.92%;}
+.span-32-26 { width: 80.91%; margin: 0pt 0.92%;}
+.span-32-27 { width: 84.09%; margin: 0pt 0.92%;}
+.span-32-28 { width: 87.27%; margin: 0pt 0.92%;}
+.span-32-29 { width: 90.45%; margin: 0pt 0.92%;}
+.span-32-30 { width: 93.64%; margin: 0pt 0.92%;}
+.span-32-31 { width: 96.82%; margin: 0pt 0.92%;}
+.span-32-32 { width: 100.00%; margin: 0pt 0.92%;}
+
+.append-32-1 { padding-right: 3.18%; }
+.append-32-2 { padding-right: 6.36%; }
+.append-32-3 { padding-right: 9.55%; }
+.append-32-4 { padding-right: 12.73%; }
+.append-32-5 { padding-right: 15.91%; }
+.append-32-6 { padding-right: 19.09%; }
+.append-32-7 { padding-right: 22.28%; }
+.append-32-8 { padding-right: 25.46%; }
+.append-32-9 { padding-right: 28.64%; }
+.append-32-10 { padding-right: 31.82%; }
+.append-32-11 { padding-right: 35.01%; }
+.append-32-12 { padding-right: 38.19%; }
+.append-32-13 { padding-right: 41.37%; }
+.append-32-14 { padding-right: 44.55%; }
+.append-32-15 { padding-right: 47.74%; }
+.append-32-16 { padding-right: 50.92%; }
+.append-32-17 { padding-right: 54.10%; }
+.append-32-18 { padding-right: 57.28%; }
+.append-32-19 { padding-right: 60.47%; }
+.append-32-20 { padding-right: 63.65%; }
+.append-32-21 { padding-right: 66.83%; }
+.append-32-22 { padding-right: 70.01%; }
+.append-32-23 { padding-right: 73.19%; }
+.append-32-24 { padding-right: 76.38%; }
+.append-32-25 { padding-right: 79.56%; }
+.append-32-26 { padding-right: 82.74%; }
+.append-32-27 { padding-right: 85.92%; }
+.append-32-28 { padding-right: 89.11%; }
+.append-32-29 { padding-right: 92.29%; }
+.append-32-30 { padding-right: 95.47%; }
+.append-32-31 { padding-right: 98.65%; }
+
+.prepend-32-1 { padding-left: 3.18%; }
+.prepend-32-2 { padding-left: 6.36%; }
+.prepend-32-3 { padding-left: 9.55%; }
+.prepend-32-4 { padding-left: 12.73%; }
+.prepend-32-5 { padding-left: 15.91%; }
+.prepend-32-6 { padding-left: 19.09%; }
+.prepend-32-7 { padding-left: 22.28%; }
+.prepend-32-8 { padding-left: 25.46%; }
+.prepend-32-9 { padding-left: 28.64%; }
+.prepend-32-10 { padding-left: 31.82%; }
+.prepend-32-11 { padding-left: 35.01%; }
+.prepend-32-12 { padding-left: 38.19%; }
+.prepend-32-13 { padding-left: 41.37%; }
+.prepend-32-14 { padding-left: 44.55%; }
+.prepend-32-15 { padding-left: 47.74%; }
+.prepend-32-16 { padding-left: 50.92%; }
+.prepend-32-17 { padding-left: 54.10%; }
+.prepend-32-18 { padding-left: 57.28%; }
+.prepend-32-19 { padding-left: 60.47%; }
+.prepend-32-20 { padding-left: 63.65%; }
+.prepend-32-21 { padding-left: 66.83%; }
+.prepend-32-22 { padding-left: 70.01%; }
+.prepend-32-23 { padding-left: 73.19%; }
+.prepend-32-24 { padding-left: 76.38%; }
+.prepend-32-25 { padding-left: 79.56%; }
+.prepend-32-26 { padding-left: 82.74%; }
+.prepend-32-27 { padding-left: 85.92%; }
+.prepend-32-28 { padding-left: 89.11%; }
+.prepend-32-29 { padding-left: 92.29%; }
+.prepend-32-30 { padding-left: 95.47%; }
+.prepend-32-31 { padding-left: 98.65%; }
+
+.span-33-1 { width: 1.30%; margin: 0pt 0.89%;}
+.span-33-2 { width: 4.39%; margin: 0pt 0.89%;}
+.span-33-3 { width: 7.47%; margin: 0pt 0.89%;}
+.span-33-4 { width: 10.56%; margin: 0pt 0.89%;}
+.span-33-5 { width: 13.64%; margin: 0pt 0.89%;}
+.span-33-6 { width: 16.73%; margin: 0pt 0.89%;}
+.span-33-7 { width: 19.81%; margin: 0pt 0.89%;}
+.span-33-8 { width: 22.89%; margin: 0pt 0.89%;}
+.span-33-9 { width: 25.98%; margin: 0pt 0.89%;}
+.span-33-10 { width: 29.06%; margin: 0pt 0.89%;}
+.span-33-11 { width: 32.15%; margin: 0pt 0.89%;}
+.span-33-12 { width: 35.23%; margin: 0pt 0.89%;}
+.span-33-13 { width: 38.32%; margin: 0pt 0.89%;}
+.span-33-14 { width: 41.40%; margin: 0pt 0.89%;}
+.span-33-15 { width: 44.48%; margin: 0pt 0.89%;}
+.span-33-16 { width: 47.57%; margin: 0pt 0.89%;}
+.span-33-17 { width: 50.65%; margin: 0pt 0.89%;}
+.span-33-18 { width: 53.74%; margin: 0pt 0.89%;}
+.span-33-19 { width: 56.82%; margin: 0pt 0.89%;}
+.span-33-20 { width: 59.91%; margin: 0pt 0.89%;}
+.span-33-21 { width: 62.99%; margin: 0pt 0.89%;}
+.span-33-22 { width: 66.07%; margin: 0pt 0.89%;}
+.span-33-23 { width: 69.16%; margin: 0pt 0.89%;}
+.span-33-24 { width: 72.24%; margin: 0pt 0.89%;}
+.span-33-25 { width: 75.33%; margin: 0pt 0.89%;}
+.span-33-26 { width: 78.41%; margin: 0pt 0.89%;}
+.span-33-27 { width: 81.49%; margin: 0pt 0.89%;}
+.span-33-28 { width: 84.58%; margin: 0pt 0.89%;}
+.span-33-29 { width: 87.66%; margin: 0pt 0.89%;}
+.span-33-30 { width: 90.75%; margin: 0pt 0.89%;}
+.span-33-31 { width: 93.83%; margin: 0pt 0.89%;}
+.span-33-32 { width: 96.92%; margin: 0pt 0.89%;}
+.span-33-33 { width: 100.00%; margin: 0pt 0.89%;}
+
+.append-33-1 { padding-right: 3.08%; }
+.append-33-2 { padding-right: 6.17%; }
+.append-33-3 { padding-right: 9.25%; }
+.append-33-4 { padding-right: 12.34%; }
+.append-33-5 { padding-right: 15.42%; }
+.append-33-6 { padding-right: 18.51%; }
+.append-33-7 { padding-right: 21.59%; }
+.append-33-8 { padding-right: 24.67%; }
+.append-33-9 { padding-right: 27.76%; }
+.append-33-10 { padding-right: 30.84%; }
+.append-33-11 { padding-right: 33.93%; }
+.append-33-12 { padding-right: 37.01%; }
+.append-33-13 { padding-right: 40.09%; }
+.append-33-14 { padding-right: 43.18%; }
+.append-33-15 { padding-right: 46.26%; }
+.append-33-16 { padding-right: 49.35%; }
+.append-33-17 { padding-right: 52.43%; }
+.append-33-18 { padding-right: 55.52%; }
+.append-33-19 { padding-right: 58.60%; }
+.append-33-20 { padding-right: 61.68%; }
+.append-33-21 { padding-right: 64.77%; }
+.append-33-22 { padding-right: 67.85%; }
+.append-33-23 { padding-right: 70.94%; }
+.append-33-24 { padding-right: 74.02%; }
+.append-33-25 { padding-right: 77.11%; }
+.append-33-26 { padding-right: 80.19%; }
+.append-33-27 { padding-right: 83.27%; }
+.append-33-28 { padding-right: 86.36%; }
+.append-33-29 { padding-right: 89.44%; }
+.append-33-30 { padding-right: 92.53%; }
+.append-33-31 { padding-right: 95.61%; }
+.append-33-32 { padding-right: 98.70%; }
+
+.prepend-33-1 { padding-left: 3.08%; }
+.prepend-33-2 { padding-left: 6.17%; }
+.prepend-33-3 { padding-left: 9.25%; }
+.prepend-33-4 { padding-left: 12.34%; }
+.prepend-33-5 { padding-left: 15.42%; }
+.prepend-33-6 { padding-left: 18.51%; }
+.prepend-33-7 { padding-left: 21.59%; }
+.prepend-33-8 { padding-left: 24.67%; }
+.prepend-33-9 { padding-left: 27.76%; }
+.prepend-33-10 { padding-left: 30.84%; }
+.prepend-33-11 { padding-left: 33.93%; }
+.prepend-33-12 { padding-left: 37.01%; }
+.prepend-33-13 { padding-left: 40.09%; }
+.prepend-33-14 { padding-left: 43.18%; }
+.prepend-33-15 { padding-left: 46.26%; }
+.prepend-33-16 { padding-left: 49.35%; }
+.prepend-33-17 { padding-left: 52.43%; }
+.prepend-33-18 { padding-left: 55.52%; }
+.prepend-33-19 { padding-left: 58.60%; }
+.prepend-33-20 { padding-left: 61.68%; }
+.prepend-33-21 { padding-left: 64.77%; }
+.prepend-33-22 { padding-left: 67.85%; }
+.prepend-33-23 { padding-left: 70.94%; }
+.prepend-33-24 { padding-left: 74.02%; }
+.prepend-33-25 { padding-left: 77.11%; }
+.prepend-33-26 { padding-left: 80.19%; }
+.prepend-33-27 { padding-left: 83.27%; }
+.prepend-33-28 { padding-left: 86.36%; }
+.prepend-33-29 { padding-left: 89.44%; }
+.prepend-33-30 { padding-left: 92.53%; }
+.prepend-33-31 { padding-left: 95.61%; }
+.prepend-33-32 { padding-left: 98.70%; }
+
+.span-34-1 { width: 1.27%; margin: 0pt 0.86%;}
+.span-34-2 { width: 4.26%; margin: 0pt 0.86%;}
+.span-34-3 { width: 7.25%; margin: 0pt 0.86%;}
+.span-34-4 { width: 10.24%; margin: 0pt 0.86%;}
+.span-34-5 { width: 13.23%; margin: 0pt 0.86%;}
+.span-34-6 { width: 16.23%; margin: 0pt 0.86%;}
+.span-34-7 { width: 19.22%; margin: 0pt 0.86%;}
+.span-34-8 { width: 22.21%; margin: 0pt 0.86%;}
+.span-34-9 { width: 25.20%; margin: 0pt 0.86%;}
+.span-34-10 { width: 28.19%; margin: 0pt 0.86%;}
+.span-34-11 { width: 31.19%; margin: 0pt 0.86%;}
+.span-34-12 { width: 34.18%; margin: 0pt 0.86%;}
+.span-34-13 { width: 37.17%; margin: 0pt 0.86%;}
+.span-34-14 { width: 40.16%; margin: 0pt 0.86%;}
+.span-34-15 { width: 43.15%; margin: 0pt 0.86%;}
+.span-34-16 { width: 46.14%; margin: 0pt 0.86%;}
+.span-34-17 { width: 49.14%; margin: 0pt 0.86%;}
+.span-34-18 { width: 52.13%; margin: 0pt 0.86%;}
+.span-34-19 { width: 55.12%; margin: 0pt 0.86%;}
+.span-34-20 { width: 58.11%; margin: 0pt 0.86%;}
+.span-34-21 { width: 61.10%; margin: 0pt 0.86%;}
+.span-34-22 { width: 64.10%; margin: 0pt 0.86%;}
+.span-34-23 { width: 67.09%; margin: 0pt 0.86%;}
+.span-34-24 { width: 70.08%; margin: 0pt 0.86%;}
+.span-34-25 { width: 73.07%; margin: 0pt 0.86%;}
+.span-34-26 { width: 76.06%; margin: 0pt 0.86%;}
+.span-34-27 { width: 79.06%; margin: 0pt 0.86%;}
+.span-34-28 { width: 82.05%; margin: 0pt 0.86%;}
+.span-34-29 { width: 85.04%; margin: 0pt 0.86%;}
+.span-34-30 { width: 88.03%; margin: 0pt 0.86%;}
+.span-34-31 { width: 91.02%; margin: 0pt 0.86%;}
+.span-34-32 { width: 94.02%; margin: 0pt 0.86%;}
+.span-34-33 { width: 97.01%; margin: 0pt 0.86%;}
+.span-34-34 { width: 100.00%; margin: 0pt 0.86%;}
+
+.append-34-1 { padding-right: 2.99%; }
+.append-34-2 { padding-right: 5.98%; }
+.append-34-3 { padding-right: 8.98%; }
+.append-34-4 { padding-right: 11.97%; }
+.append-34-5 { padding-right: 14.96%; }
+.append-34-6 { padding-right: 17.95%; }
+.append-34-7 { padding-right: 20.94%; }
+.append-34-8 { padding-right: 23.94%; }
+.append-34-9 { padding-right: 26.93%; }
+.append-34-10 { padding-right: 29.92%; }
+.append-34-11 { padding-right: 32.91%; }
+.append-34-12 { padding-right: 35.90%; }
+.append-34-13 { padding-right: 38.90%; }
+.append-34-14 { padding-right: 41.89%; }
+.append-34-15 { padding-right: 44.88%; }
+.append-34-16 { padding-right: 47.87%; }
+.append-34-17 { padding-right: 50.86%; }
+.append-34-18 { padding-right: 53.86%; }
+.append-34-19 { padding-right: 56.85%; }
+.append-34-20 { padding-right: 59.84%; }
+.append-34-21 { padding-right: 62.83%; }
+.append-34-22 { padding-right: 65.82%; }
+.append-34-23 { padding-right: 68.81%; }
+.append-34-24 { padding-right: 71.81%; }
+.append-34-25 { padding-right: 74.80%; }
+.append-34-26 { padding-right: 77.79%; }
+.append-34-27 { padding-right: 80.78%; }
+.append-34-28 { padding-right: 83.77%; }
+.append-34-29 { padding-right: 86.77%; }
+.append-34-30 { padding-right: 89.76%; }
+.append-34-31 { padding-right: 92.75%; }
+.append-34-32 { padding-right: 95.74%; }
+.append-34-33 { padding-right: 98.73%; }
+
+.prepend-34-1 { padding-left: 2.99%; }
+.prepend-34-2 { padding-left: 5.98%; }
+.prepend-34-3 { padding-left: 8.98%; }
+.prepend-34-4 { padding-left: 11.97%; }
+.prepend-34-5 { padding-left: 14.96%; }
+.prepend-34-6 { padding-left: 17.95%; }
+.prepend-34-7 { padding-left: 20.94%; }
+.prepend-34-8 { padding-left: 23.94%; }
+.prepend-34-9 { padding-left: 26.93%; }
+.prepend-34-10 { padding-left: 29.92%; }
+.prepend-34-11 { padding-left: 32.91%; }
+.prepend-34-12 { padding-left: 35.90%; }
+.prepend-34-13 { padding-left: 38.90%; }
+.prepend-34-14 { padding-left: 41.89%; }
+.prepend-34-15 { padding-left: 44.88%; }
+.prepend-34-16 { padding-left: 47.87%; }
+.prepend-34-17 { padding-left: 50.86%; }
+.prepend-34-18 { padding-left: 53.86%; }
+.prepend-34-19 { padding-left: 56.85%; }
+.prepend-34-20 { padding-left: 59.84%; }
+.prepend-34-21 { padding-left: 62.83%; }
+.prepend-34-22 { padding-left: 65.82%; }
+.prepend-34-23 { padding-left: 68.81%; }
+.prepend-34-24 { padding-left: 71.81%; }
+.prepend-34-25 { padding-left: 74.80%; }
+.prepend-34-26 { padding-left: 77.79%; }
+.prepend-34-27 { padding-left: 80.78%; }
+.prepend-34-28 { padding-left: 83.77%; }
+.prepend-34-29 { padding-left: 86.77%; }
+.prepend-34-30 { padding-left: 89.76%; }
+.prepend-34-31 { padding-left: 92.75%; }
+.prepend-34-32 { padding-left: 95.74%; }
+.prepend-34-33 { padding-left: 98.73%; }
+
+.span-35-1 { width: 1.23%; margin: 0pt 0.84%;}
+.span-35-2 { width: 4.13%; margin: 0pt 0.84%;}
+.span-35-3 { width: 7.04%; margin: 0pt 0.84%;}
+.span-35-4 { width: 9.94%; margin: 0pt 0.84%;}
+.span-35-5 { width: 12.85%; margin: 0pt 0.84%;}
+.span-35-6 { width: 15.75%; margin: 0pt 0.84%;}
+.span-35-7 { width: 18.66%; margin: 0pt 0.84%;}
+.span-35-8 { width: 21.56%; margin: 0pt 0.84%;}
+.span-35-9 { width: 24.47%; margin: 0pt 0.84%;}
+.span-35-10 { width: 27.37%; margin: 0pt 0.84%;}
+.span-35-11 { width: 30.28%; margin: 0pt 0.84%;}
+.span-35-12 { width: 33.18%; margin: 0pt 0.84%;}
+.span-35-13 { width: 36.09%; margin: 0pt 0.84%;}
+.span-35-14 { width: 38.99%; margin: 0pt 0.84%;}
+.span-35-15 { width: 41.90%; margin: 0pt 0.84%;}
+.span-35-16 { width: 44.80%; margin: 0pt 0.84%;}
+.span-35-17 { width: 47.71%; margin: 0pt 0.84%;}
+.span-35-18 { width: 50.61%; margin: 0pt 0.84%;}
+.span-35-19 { width: 53.52%; margin: 0pt 0.84%;}
+.span-35-20 { width: 56.42%; margin: 0pt 0.84%;}
+.span-35-21 { width: 59.33%; margin: 0pt 0.84%;}
+.span-35-22 { width: 62.23%; margin: 0pt 0.84%;}
+.span-35-23 { width: 65.14%; margin: 0pt 0.84%;}
+.span-35-24 { width: 68.04%; margin: 0pt 0.84%;}
+.span-35-25 { width: 70.95%; margin: 0pt 0.84%;}
+.span-35-26 { width: 73.85%; margin: 0pt 0.84%;}
+.span-35-27 { width: 76.76%; margin: 0pt 0.84%;}
+.span-35-28 { width: 79.66%; margin: 0pt 0.84%;}
+.span-35-29 { width: 82.57%; margin: 0pt 0.84%;}
+.span-35-30 { width: 85.47%; margin: 0pt 0.84%;}
+.span-35-31 { width: 88.38%; margin: 0pt 0.84%;}
+.span-35-32 { width: 91.28%; margin: 0pt 0.84%;}
+.span-35-33 { width: 94.19%; margin: 0pt 0.84%;}
+.span-35-34 { width: 97.09%; margin: 0pt 0.84%;}
+.span-35-35 { width: 100.00%; margin: 0pt 0.84%;}
+
+.append-35-1 { padding-right: 2.91%; }
+.append-35-2 { padding-right: 5.81%; }
+.append-35-3 { padding-right: 8.72%; }
+.append-35-4 { padding-right: 11.62%; }
+.append-35-5 { padding-right: 14.53%; }
+.append-35-6 { padding-right: 17.43%; }
+.append-35-7 { padding-right: 20.34%; }
+.append-35-8 { padding-right: 23.24%; }
+.append-35-9 { padding-right: 26.15%; }
+.append-35-10 { padding-right: 29.05%; }
+.append-35-11 { padding-right: 31.96%; }
+.append-35-12 { padding-right: 34.86%; }
+.append-35-13 { padding-right: 37.77%; }
+.append-35-14 { padding-right: 40.67%; }
+.append-35-15 { padding-right: 43.58%; }
+.append-35-16 { padding-right: 46.48%; }
+.append-35-17 { padding-right: 49.39%; }
+.append-35-18 { padding-right: 52.29%; }
+.append-35-19 { padding-right: 55.20%; }
+.append-35-20 { padding-right: 58.10%; }
+.append-35-21 { padding-right: 61.01%; }
+.append-35-22 { padding-right: 63.91%; }
+.append-35-23 { padding-right: 66.82%; }
+.append-35-24 { padding-right: 69.72%; }
+.append-35-25 { padding-right: 72.63%; }
+.append-35-26 { padding-right: 75.53%; }
+.append-35-27 { padding-right: 78.44%; }
+.append-35-28 { padding-right: 81.34%; }
+.append-35-29 { padding-right: 84.25%; }
+.append-35-30 { padding-right: 87.15%; }
+.append-35-31 { padding-right: 90.06%; }
+.append-35-32 { padding-right: 92.96%; }
+.append-35-33 { padding-right: 95.87%; }
+.append-35-34 { padding-right: 98.77%; }
+
+.prepend-35-1 { padding-left: 2.91%; }
+.prepend-35-2 { padding-left: 5.81%; }
+.prepend-35-3 { padding-left: 8.72%; }
+.prepend-35-4 { padding-left: 11.62%; }
+.prepend-35-5 { padding-left: 14.53%; }
+.prepend-35-6 { padding-left: 17.43%; }
+.prepend-35-7 { padding-left: 20.34%; }
+.prepend-35-8 { padding-left: 23.24%; }
+.prepend-35-9 { padding-left: 26.15%; }
+.prepend-35-10 { padding-left: 29.05%; }
+.prepend-35-11 { padding-left: 31.96%; }
+.prepend-35-12 { padding-left: 34.86%; }
+.prepend-35-13 { padding-left: 37.77%; }
+.prepend-35-14 { padding-left: 40.67%; }
+.prepend-35-15 { padding-left: 43.58%; }
+.prepend-35-16 { padding-left: 46.48%; }
+.prepend-35-17 { padding-left: 49.39%; }
+.prepend-35-18 { padding-left: 52.29%; }
+.prepend-35-19 { padding-left: 55.20%; }
+.prepend-35-20 { padding-left: 58.10%; }
+.prepend-35-21 { padding-left: 61.01%; }
+.prepend-35-22 { padding-left: 63.91%; }
+.prepend-35-23 { padding-left: 66.82%; }
+.prepend-35-24 { padding-left: 69.72%; }
+.prepend-35-25 { padding-left: 72.63%; }
+.prepend-35-26 { padding-left: 75.53%; }
+.prepend-35-27 { padding-left: 78.44%; }
+.prepend-35-28 { padding-left: 81.34%; }
+.prepend-35-29 { padding-left: 84.25%; }
+.prepend-35-30 { padding-left: 87.15%; }
+.prepend-35-31 { padding-left: 90.06%; }
+.prepend-35-32 { padding-left: 92.96%; }
+.prepend-35-33 { padding-left: 95.87%; }
+.prepend-35-34 { padding-left: 98.77%; }
+
+.span-36-1 { width: 1.19%; margin: 0pt 0.81%;}
+.span-36-2 { width: 4.02%; margin: 0pt 0.81%;}
+.span-36-3 { width: 6.84%; margin: 0pt 0.81%;}
+.span-36-4 { width: 9.66%; margin: 0pt 0.81%;}
+.span-36-5 { width: 12.49%; margin: 0pt 0.81%;}
+.span-36-6 { width: 15.31%; margin: 0pt 0.81%;}
+.span-36-7 { width: 18.13%; margin: 0pt 0.81%;}
+.span-36-8 { width: 20.96%; margin: 0pt 0.81%;}
+.span-36-9 { width: 23.78%; margin: 0pt 0.81%;}
+.span-36-10 { width: 26.60%; margin: 0pt 0.81%;}
+.span-36-11 { width: 29.42%; margin: 0pt 0.81%;}
+.span-36-12 { width: 32.25%; margin: 0pt 0.81%;}
+.span-36-13 { width: 35.07%; margin: 0pt 0.81%;}
+.span-36-14 { width: 37.89%; margin: 0pt 0.81%;}
+.span-36-15 { width: 40.72%; margin: 0pt 0.81%;}
+.span-36-16 { width: 43.54%; margin: 0pt 0.81%;}
+.span-36-17 { width: 46.36%; margin: 0pt 0.81%;}
+.span-36-18 { width: 49.19%; margin: 0pt 0.81%;}
+.span-36-19 { width: 52.01%; margin: 0pt 0.81%;}
+.span-36-20 { width: 54.83%; margin: 0pt 0.81%;}
+.span-36-21 { width: 57.65%; margin: 0pt 0.81%;}
+.span-36-22 { width: 60.48%; margin: 0pt 0.81%;}
+.span-36-23 { width: 63.30%; margin: 0pt 0.81%;}
+.span-36-24 { width: 66.12%; margin: 0pt 0.81%;}
+.span-36-25 { width: 68.95%; margin: 0pt 0.81%;}
+.span-36-26 { width: 71.77%; margin: 0pt 0.81%;}
+.span-36-27 { width: 74.59%; margin: 0pt 0.81%;}
+.span-36-28 { width: 77.42%; margin: 0pt 0.81%;}
+.span-36-29 { width: 80.24%; margin: 0pt 0.81%;}
+.span-36-30 { width: 83.06%; margin: 0pt 0.81%;}
+.span-36-31 { width: 85.88%; margin: 0pt 0.81%;}
+.span-36-32 { width: 88.71%; margin: 0pt 0.81%;}
+.span-36-33 { width: 91.53%; margin: 0pt 0.81%;}
+.span-36-34 { width: 94.35%; margin: 0pt 0.81%;}
+.span-36-35 { width: 97.18%; margin: 0pt 0.81%;}
+.span-36-36 { width: 100.00%; margin: 0pt 0.81%;}
+
+.append-36-1 { padding-right: 2.82%; }
+.append-36-2 { padding-right: 5.65%; }
+.append-36-3 { padding-right: 8.47%; }
+.append-36-4 { padding-right: 11.29%; }
+.append-36-5 { padding-right: 14.12%; }
+.append-36-6 { padding-right: 16.94%; }
+.append-36-7 { padding-right: 19.76%; }
+.append-36-8 { padding-right: 22.58%; }
+.append-36-9 { padding-right: 25.41%; }
+.append-36-10 { padding-right: 28.23%; }
+.append-36-11 { padding-right: 31.05%; }
+.append-36-12 { padding-right: 33.88%; }
+.append-36-13 { padding-right: 36.70%; }
+.append-36-14 { padding-right: 39.52%; }
+.append-36-15 { padding-right: 42.35%; }
+.append-36-16 { padding-right: 45.17%; }
+.append-36-17 { padding-right: 47.99%; }
+.append-36-18 { padding-right: 50.81%; }
+.append-36-19 { padding-right: 53.64%; }
+.append-36-20 { padding-right: 56.46%; }
+.append-36-21 { padding-right: 59.28%; }
+.append-36-22 { padding-right: 62.11%; }
+.append-36-23 { padding-right: 64.93%; }
+.append-36-24 { padding-right: 67.75%; }
+.append-36-25 { padding-right: 70.58%; }
+.append-36-26 { padding-right: 73.40%; }
+.append-36-27 { padding-right: 76.22%; }
+.append-36-28 { padding-right: 79.04%; }
+.append-36-29 { padding-right: 81.87%; }
+.append-36-30 { padding-right: 84.69%; }
+.append-36-31 { padding-right: 87.51%; }
+.append-36-32 { padding-right: 90.34%; }
+.append-36-33 { padding-right: 93.16%; }
+.append-36-34 { padding-right: 95.98%; }
+.append-36-35 { padding-right: 98.81%; }
+
+.prepend-36-1 { padding-left: 2.82%; }
+.prepend-36-2 { padding-left: 5.65%; }
+.prepend-36-3 { padding-left: 8.47%; }
+.prepend-36-4 { padding-left: 11.29%; }
+.prepend-36-5 { padding-left: 14.12%; }
+.prepend-36-6 { padding-left: 16.94%; }
+.prepend-36-7 { padding-left: 19.76%; }
+.prepend-36-8 { padding-left: 22.58%; }
+.prepend-36-9 { padding-left: 25.41%; }
+.prepend-36-10 { padding-left: 28.23%; }
+.prepend-36-11 { padding-left: 31.05%; }
+.prepend-36-12 { padding-left: 33.88%; }
+.prepend-36-13 { padding-left: 36.70%; }
+.prepend-36-14 { padding-left: 39.52%; }
+.prepend-36-15 { padding-left: 42.35%; }
+.prepend-36-16 { padding-left: 45.17%; }
+.prepend-36-17 { padding-left: 47.99%; }
+.prepend-36-18 { padding-left: 50.81%; }
+.prepend-36-19 { padding-left: 53.64%; }
+.prepend-36-20 { padding-left: 56.46%; }
+.prepend-36-21 { padding-left: 59.28%; }
+.prepend-36-22 { padding-left: 62.11%; }
+.prepend-36-23 { padding-left: 64.93%; }
+.prepend-36-24 { padding-left: 67.75%; }
+.prepend-36-25 { padding-left: 70.58%; }
+.prepend-36-26 { padding-left: 73.40%; }
+.prepend-36-27 { padding-left: 76.22%; }
+.prepend-36-28 { padding-left: 79.04%; }
+.prepend-36-29 { padding-left: 81.87%; }
+.prepend-36-30 { padding-left: 84.69%; }
+.prepend-36-31 { padding-left: 87.51%; }
+.prepend-36-32 { padding-left: 90.34%; }
+.prepend-36-33 { padding-left: 93.16%; }
+.prepend-36-34 { padding-left: 95.98%; }
+.prepend-36-35 { padding-left: 98.81%; }
+
+.span-37-1 { width: 1.16%; margin: 0pt 0.79%;}
+.span-37-2 { width: 3.91%; margin: 0pt 0.79%;}
+.span-37-3 { width: 6.65%; margin: 0pt 0.79%;}
+.span-37-4 { width: 9.40%; margin: 0pt 0.79%;}
+.span-37-5 { width: 12.14%; margin: 0pt 0.79%;}
+.span-37-6 { width: 14.89%; margin: 0pt 0.79%;}
+.span-37-7 { width: 17.63%; margin: 0pt 0.79%;}
+.span-37-8 { width: 20.38%; margin: 0pt 0.79%;}
+.span-37-9 { width: 23.13%; margin: 0pt 0.79%;}
+.span-37-10 { width: 25.87%; margin: 0pt 0.79%;}
+.span-37-11 { width: 28.62%; margin: 0pt 0.79%;}
+.span-37-12 { width: 31.36%; margin: 0pt 0.79%;}
+.span-37-13 { width: 34.11%; margin: 0pt 0.79%;}
+.span-37-14 { width: 36.85%; margin: 0pt 0.79%;}
+.span-37-15 { width: 39.60%; margin: 0pt 0.79%;}
+.span-37-16 { width: 42.34%; margin: 0pt 0.79%;}
+.span-37-17 { width: 45.09%; margin: 0pt 0.79%;}
+.span-37-18 { width: 47.84%; margin: 0pt 0.79%;}
+.span-37-19 { width: 50.58%; margin: 0pt 0.79%;}
+.span-37-20 { width: 53.33%; margin: 0pt 0.79%;}
+.span-37-21 { width: 56.07%; margin: 0pt 0.79%;}
+.span-37-22 { width: 58.82%; margin: 0pt 0.79%;}
+.span-37-23 { width: 61.56%; margin: 0pt 0.79%;}
+.span-37-24 { width: 64.31%; margin: 0pt 0.79%;}
+.span-37-25 { width: 67.05%; margin: 0pt 0.79%;}
+.span-37-26 { width: 69.80%; margin: 0pt 0.79%;}
+.span-37-27 { width: 72.54%; margin: 0pt 0.79%;}
+.span-37-28 { width: 75.29%; margin: 0pt 0.79%;}
+.span-37-29 { width: 78.04%; margin: 0pt 0.79%;}
+.span-37-30 { width: 80.78%; margin: 0pt 0.79%;}
+.span-37-31 { width: 83.53%; margin: 0pt 0.79%;}
+.span-37-32 { width: 86.27%; margin: 0pt 0.79%;}
+.span-37-33 { width: 89.02%; margin: 0pt 0.79%;}
+.span-37-34 { width: 91.76%; margin: 0pt 0.79%;}
+.span-37-35 { width: 94.51%; margin: 0pt 0.79%;}
+.span-37-36 { width: 97.25%; margin: 0pt 0.79%;}
+.span-37-37 { width: 100.00%; margin: 0pt 0.79%;}
+
+.append-37-1 { padding-right: 2.75%; }
+.append-37-2 { padding-right: 5.49%; }
+.append-37-3 { padding-right: 8.24%; }
+.append-37-4 { padding-right: 10.98%; }
+.append-37-5 { padding-right: 13.73%; }
+.append-37-6 { padding-right: 16.47%; }
+.append-37-7 { padding-right: 19.22%; }
+.append-37-8 { padding-right: 21.96%; }
+.append-37-9 { padding-right: 24.71%; }
+.append-37-10 { padding-right: 27.46%; }
+.append-37-11 { padding-right: 30.20%; }
+.append-37-12 { padding-right: 32.95%; }
+.append-37-13 { padding-right: 35.69%; }
+.append-37-14 { padding-right: 38.44%; }
+.append-37-15 { padding-right: 41.18%; }
+.append-37-16 { padding-right: 43.93%; }
+.append-37-17 { padding-right: 46.67%; }
+.append-37-18 { padding-right: 49.42%; }
+.append-37-19 { padding-right: 52.16%; }
+.append-37-20 { padding-right: 54.91%; }
+.append-37-21 { padding-right: 57.66%; }
+.append-37-22 { padding-right: 60.40%; }
+.append-37-23 { padding-right: 63.15%; }
+.append-37-24 { padding-right: 65.89%; }
+.append-37-25 { padding-right: 68.64%; }
+.append-37-26 { padding-right: 71.38%; }
+.append-37-27 { padding-right: 74.13%; }
+.append-37-28 { padding-right: 76.87%; }
+.append-37-29 { padding-right: 79.62%; }
+.append-37-30 { padding-right: 82.37%; }
+.append-37-31 { padding-right: 85.11%; }
+.append-37-32 { padding-right: 87.86%; }
+.append-37-33 { padding-right: 90.60%; }
+.append-37-34 { padding-right: 93.35%; }
+.append-37-35 { padding-right: 96.09%; }
+.append-37-36 { padding-right: 98.84%; }
+
+.prepend-37-1 { padding-left: 2.75%; }
+.prepend-37-2 { padding-left: 5.49%; }
+.prepend-37-3 { padding-left: 8.24%; }
+.prepend-37-4 { padding-left: 10.98%; }
+.prepend-37-5 { padding-left: 13.73%; }
+.prepend-37-6 { padding-left: 16.47%; }
+.prepend-37-7 { padding-left: 19.22%; }
+.prepend-37-8 { padding-left: 21.96%; }
+.prepend-37-9 { padding-left: 24.71%; }
+.prepend-37-10 { padding-left: 27.46%; }
+.prepend-37-11 { padding-left: 30.20%; }
+.prepend-37-12 { padding-left: 32.95%; }
+.prepend-37-13 { padding-left: 35.69%; }
+.prepend-37-14 { padding-left: 38.44%; }
+.prepend-37-15 { padding-left: 41.18%; }
+.prepend-37-16 { padding-left: 43.93%; }
+.prepend-37-17 { padding-left: 46.67%; }
+.prepend-37-18 { padding-left: 49.42%; }
+.prepend-37-19 { padding-left: 52.16%; }
+.prepend-37-20 { padding-left: 54.91%; }
+.prepend-37-21 { padding-left: 57.66%; }
+.prepend-37-22 { padding-left: 60.40%; }
+.prepend-37-23 { padding-left: 63.15%; }
+.prepend-37-24 { padding-left: 65.89%; }
+.prepend-37-25 { padding-left: 68.64%; }
+.prepend-37-26 { padding-left: 71.38%; }
+.prepend-37-27 { padding-left: 74.13%; }
+.prepend-37-28 { padding-left: 76.87%; }
+.prepend-37-29 { padding-left: 79.62%; }
+.prepend-37-30 { padding-left: 82.37%; }
+.prepend-37-31 { padding-left: 85.11%; }
+.prepend-37-32 { padding-left: 87.86%; }
+.prepend-37-33 { padding-left: 90.60%; }
+.prepend-37-34 { padding-left: 93.35%; }
+.prepend-37-35 { padding-left: 96.09%; }
+.prepend-37-36 { padding-left: 98.84%; }
+
+.span-38-1 { width: 1.13%; margin: 0pt 0.77%;}
+.span-38-2 { width: 3.80%; margin: 0pt 0.77%;}
+.span-38-3 { width: 6.47%; margin: 0pt 0.77%;}
+.span-38-4 { width: 9.15%; margin: 0pt 0.77%;}
+.span-38-5 { width: 11.82%; margin: 0pt 0.77%;}
+.span-38-6 { width: 14.49%; margin: 0pt 0.77%;}
+.span-38-7 { width: 17.16%; margin: 0pt 0.77%;}
+.span-38-8 { width: 19.84%; margin: 0pt 0.77%;}
+.span-38-9 { width: 22.51%; margin: 0pt 0.77%;}
+.span-38-10 { width: 25.18%; margin: 0pt 0.77%;}
+.span-38-11 { width: 27.85%; margin: 0pt 0.77%;}
+.span-38-12 { width: 30.52%; margin: 0pt 0.77%;}
+.span-38-13 { width: 33.20%; margin: 0pt 0.77%;}
+.span-38-14 { width: 35.87%; margin: 0pt 0.77%;}
+.span-38-15 { width: 38.54%; margin: 0pt 0.77%;}
+.span-38-16 { width: 41.21%; margin: 0pt 0.77%;}
+.span-38-17 { width: 43.88%; margin: 0pt 0.77%;}
+.span-38-18 { width: 46.56%; margin: 0pt 0.77%;}
+.span-38-19 { width: 49.23%; margin: 0pt 0.77%;}
+.span-38-20 { width: 51.90%; margin: 0pt 0.77%;}
+.span-38-21 { width: 54.57%; margin: 0pt 0.77%;}
+.span-38-22 { width: 57.25%; margin: 0pt 0.77%;}
+.span-38-23 { width: 59.92%; margin: 0pt 0.77%;}
+.span-38-24 { width: 62.59%; margin: 0pt 0.77%;}
+.span-38-25 { width: 65.26%; margin: 0pt 0.77%;}
+.span-38-26 { width: 67.93%; margin: 0pt 0.77%;}
+.span-38-27 { width: 70.61%; margin: 0pt 0.77%;}
+.span-38-28 { width: 73.28%; margin: 0pt 0.77%;}
+.span-38-29 { width: 75.95%; margin: 0pt 0.77%;}
+.span-38-30 { width: 78.62%; margin: 0pt 0.77%;}
+.span-38-31 { width: 81.29%; margin: 0pt 0.77%;}
+.span-38-32 { width: 83.97%; margin: 0pt 0.77%;}
+.span-38-33 { width: 86.64%; margin: 0pt 0.77%;}
+.span-38-34 { width: 89.31%; margin: 0pt 0.77%;}
+.span-38-35 { width: 91.98%; margin: 0pt 0.77%;}
+.span-38-36 { width: 94.66%; margin: 0pt 0.77%;}
+.span-38-37 { width: 97.33%; margin: 0pt 0.77%;}
+.span-38-38 { width: 100.00%; margin: 0pt 0.77%;}
+
+.append-38-1 { padding-right: 2.67%; }
+.append-38-2 { padding-right: 5.34%; }
+.append-38-3 { padding-right: 8.02%; }
+.append-38-4 { padding-right: 10.69%; }
+.append-38-5 { padding-right: 13.36%; }
+.append-38-6 { padding-right: 16.03%; }
+.append-38-7 { padding-right: 18.71%; }
+.append-38-8 { padding-right: 21.38%; }
+.append-38-9 { padding-right: 24.05%; }
+.append-38-10 { padding-right: 26.72%; }
+.append-38-11 { padding-right: 29.39%; }
+.append-38-12 { padding-right: 32.07%; }
+.append-38-13 { padding-right: 34.74%; }
+.append-38-14 { padding-right: 37.41%; }
+.append-38-15 { padding-right: 40.08%; }
+.append-38-16 { padding-right: 42.75%; }
+.append-38-17 { padding-right: 45.43%; }
+.append-38-18 { padding-right: 48.10%; }
+.append-38-19 { padding-right: 50.77%; }
+.append-38-20 { padding-right: 53.44%; }
+.append-38-21 { padding-right: 56.12%; }
+.append-38-22 { padding-right: 58.79%; }
+.append-38-23 { padding-right: 61.46%; }
+.append-38-24 { padding-right: 64.13%; }
+.append-38-25 { padding-right: 66.80%; }
+.append-38-26 { padding-right: 69.48%; }
+.append-38-27 { padding-right: 72.15%; }
+.append-38-28 { padding-right: 74.82%; }
+.append-38-29 { padding-right: 77.49%; }
+.append-38-30 { padding-right: 80.16%; }
+.append-38-31 { padding-right: 82.84%; }
+.append-38-32 { padding-right: 85.51%; }
+.append-38-33 { padding-right: 88.18%; }
+.append-38-34 { padding-right: 90.85%; }
+.append-38-35 { padding-right: 93.53%; }
+.append-38-36 { padding-right: 96.20%; }
+.append-38-37 { padding-right: 98.87%; }
+
+.prepend-38-1 { padding-left: 2.67%; }
+.prepend-38-2 { padding-left: 5.34%; }
+.prepend-38-3 { padding-left: 8.02%; }
+.prepend-38-4 { padding-left: 10.69%; }
+.prepend-38-5 { padding-left: 13.36%; }
+.prepend-38-6 { padding-left: 16.03%; }
+.prepend-38-7 { padding-left: 18.71%; }
+.prepend-38-8 { padding-left: 21.38%; }
+.prepend-38-9 { padding-left: 24.05%; }
+.prepend-38-10 { padding-left: 26.72%; }
+.prepend-38-11 { padding-left: 29.39%; }
+.prepend-38-12 { padding-left: 32.07%; }
+.prepend-38-13 { padding-left: 34.74%; }
+.prepend-38-14 { padding-left: 37.41%; }
+.prepend-38-15 { padding-left: 40.08%; }
+.prepend-38-16 { padding-left: 42.75%; }
+.prepend-38-17 { padding-left: 45.43%; }
+.prepend-38-18 { padding-left: 48.10%; }
+.prepend-38-19 { padding-left: 50.77%; }
+.prepend-38-20 { padding-left: 53.44%; }
+.prepend-38-21 { padding-left: 56.12%; }
+.prepend-38-22 { padding-left: 58.79%; }
+.prepend-38-23 { padding-left: 61.46%; }
+.prepend-38-24 { padding-left: 64.13%; }
+.prepend-38-25 { padding-left: 66.80%; }
+.prepend-38-26 { padding-left: 69.48%; }
+.prepend-38-27 { padding-left: 72.15%; }
+.prepend-38-28 { padding-left: 74.82%; }
+.prepend-38-29 { padding-left: 77.49%; }
+.prepend-38-30 { padding-left: 80.16%; }
+.prepend-38-31 { padding-left: 82.84%; }
+.prepend-38-32 { padding-left: 85.51%; }
+.prepend-38-33 { padding-left: 88.18%; }
+.prepend-38-34 { padding-left: 90.85%; }
+.prepend-38-35 { padding-left: 93.53%; }
+.prepend-38-36 { padding-left: 96.20%; }
+.prepend-38-37 { padding-left: 98.87%; }
+
+.span-39-1 { width: 1.10%; margin: 0pt 0.75%;}
+.span-39-2 { width: 3.70%; margin: 0pt 0.75%;}
+.span-39-3 { width: 6.31%; margin: 0pt 0.75%;}
+.span-39-4 { width: 8.91%; margin: 0pt 0.75%;}
+.span-39-5 { width: 11.51%; margin: 0pt 0.75%;}
+.span-39-6 { width: 14.11%; margin: 0pt 0.75%;}
+.span-39-7 { width: 16.72%; margin: 0pt 0.75%;}
+.span-39-8 { width: 19.32%; margin: 0pt 0.75%;}
+.span-39-9 { width: 21.92%; margin: 0pt 0.75%;}
+.span-39-10 { width: 24.52%; margin: 0pt 0.75%;}
+.span-39-11 { width: 27.13%; margin: 0pt 0.75%;}
+.span-39-12 { width: 29.73%; margin: 0pt 0.75%;}
+.span-39-13 { width: 32.33%; margin: 0pt 0.75%;}
+.span-39-14 { width: 34.93%; margin: 0pt 0.75%;}
+.span-39-15 { width: 37.54%; margin: 0pt 0.75%;}
+.span-39-16 { width: 40.14%; margin: 0pt 0.75%;}
+.span-39-17 { width: 42.74%; margin: 0pt 0.75%;}
+.span-39-18 { width: 45.35%; margin: 0pt 0.75%;}
+.span-39-19 { width: 47.95%; margin: 0pt 0.75%;}
+.span-39-20 { width: 50.55%; margin: 0pt 0.75%;}
+.span-39-21 { width: 53.15%; margin: 0pt 0.75%;}
+.span-39-22 { width: 55.76%; margin: 0pt 0.75%;}
+.span-39-23 { width: 58.36%; margin: 0pt 0.75%;}
+.span-39-24 { width: 60.96%; margin: 0pt 0.75%;}
+.span-39-25 { width: 63.56%; margin: 0pt 0.75%;}
+.span-39-26 { width: 66.17%; margin: 0pt 0.75%;}
+.span-39-27 { width: 68.77%; margin: 0pt 0.75%;}
+.span-39-28 { width: 71.37%; margin: 0pt 0.75%;}
+.span-39-29 { width: 73.97%; margin: 0pt 0.75%;}
+.span-39-30 { width: 76.58%; margin: 0pt 0.75%;}
+.span-39-31 { width: 79.18%; margin: 0pt 0.75%;}
+.span-39-32 { width: 81.78%; margin: 0pt 0.75%;}
+.span-39-33 { width: 84.38%; margin: 0pt 0.75%;}
+.span-39-34 { width: 86.99%; margin: 0pt 0.75%;}
+.span-39-35 { width: 89.59%; margin: 0pt 0.75%;}
+.span-39-36 { width: 92.19%; margin: 0pt 0.75%;}
+.span-39-37 { width: 94.79%; margin: 0pt 0.75%;}
+.span-39-38 { width: 97.40%; margin: 0pt 0.75%;}
+.span-39-39 { width: 100.00%; margin: 0pt 0.75%;}
+
+.append-39-1 { padding-right: 2.60%; }
+.append-39-2 { padding-right: 5.21%; }
+.append-39-3 { padding-right: 7.81%; }
+.append-39-4 { padding-right: 10.41%; }
+.append-39-5 { padding-right: 13.01%; }
+.append-39-6 { padding-right: 15.62%; }
+.append-39-7 { padding-right: 18.22%; }
+.append-39-8 { padding-right: 20.82%; }
+.append-39-9 { padding-right: 23.42%; }
+.append-39-10 { padding-right: 26.03%; }
+.append-39-11 { padding-right: 28.63%; }
+.append-39-12 { padding-right: 31.23%; }
+.append-39-13 { padding-right: 33.83%; }
+.append-39-14 { padding-right: 36.44%; }
+.append-39-15 { padding-right: 39.04%; }
+.append-39-16 { padding-right: 41.64%; }
+.append-39-17 { padding-right: 44.24%; }
+.append-39-18 { padding-right: 46.85%; }
+.append-39-19 { padding-right: 49.45%; }
+.append-39-20 { padding-right: 52.05%; }
+.append-39-21 { padding-right: 54.65%; }
+.append-39-22 { padding-right: 57.26%; }
+.append-39-23 { padding-right: 59.86%; }
+.append-39-24 { padding-right: 62.46%; }
+.append-39-25 { padding-right: 65.07%; }
+.append-39-26 { padding-right: 67.67%; }
+.append-39-27 { padding-right: 70.27%; }
+.append-39-28 { padding-right: 72.87%; }
+.append-39-29 { padding-right: 75.48%; }
+.append-39-30 { padding-right: 78.08%; }
+.append-39-31 { padding-right: 80.68%; }
+.append-39-32 { padding-right: 83.28%; }
+.append-39-33 { padding-right: 85.89%; }
+.append-39-34 { padding-right: 88.49%; }
+.append-39-35 { padding-right: 91.09%; }
+.append-39-36 { padding-right: 93.69%; }
+.append-39-37 { padding-right: 96.30%; }
+.append-39-38 { padding-right: 98.90%; }
+
+.prepend-39-1 { padding-left: 2.60%; }
+.prepend-39-2 { padding-left: 5.21%; }
+.prepend-39-3 { padding-left: 7.81%; }
+.prepend-39-4 { padding-left: 10.41%; }
+.prepend-39-5 { padding-left: 13.01%; }
+.prepend-39-6 { padding-left: 15.62%; }
+.prepend-39-7 { padding-left: 18.22%; }
+.prepend-39-8 { padding-left: 20.82%; }
+.prepend-39-9 { padding-left: 23.42%; }
+.prepend-39-10 { padding-left: 26.03%; }
+.prepend-39-11 { padding-left: 28.63%; }
+.prepend-39-12 { padding-left: 31.23%; }
+.prepend-39-13 { padding-left: 33.83%; }
+.prepend-39-14 { padding-left: 36.44%; }
+.prepend-39-15 { padding-left: 39.04%; }
+.prepend-39-16 { padding-left: 41.64%; }
+.prepend-39-17 { padding-left: 44.24%; }
+.prepend-39-18 { padding-left: 46.85%; }
+.prepend-39-19 { padding-left: 49.45%; }
+.prepend-39-20 { padding-left: 52.05%; }
+.prepend-39-21 { padding-left: 54.65%; }
+.prepend-39-22 { padding-left: 57.26%; }
+.prepend-39-23 { padding-left: 59.86%; }
+.prepend-39-24 { padding-left: 62.46%; }
+.prepend-39-25 { padding-left: 65.07%; }
+.prepend-39-26 { padding-left: 67.67%; }
+.prepend-39-27 { padding-left: 70.27%; }
+.prepend-39-28 { padding-left: 72.87%; }
+.prepend-39-29 { padding-left: 75.48%; }
+.prepend-39-30 { padding-left: 78.08%; }
+.prepend-39-31 { padding-left: 80.68%; }
+.prepend-39-32 { padding-left: 83.28%; }
+.prepend-39-33 { padding-left: 85.89%; }
+.prepend-39-34 { padding-left: 88.49%; }
+.prepend-39-35 { padding-left: 91.09%; }
+.prepend-39-36 { padding-left: 93.69%; }
+.prepend-39-37 { padding-left: 96.30%; }
+.prepend-39-38 { padding-left: 98.90%; }
+
+.span-40-1 { width: 1.07%; margin: 0pt 0.73%;}
+.span-40-2 { width: 3.61%; margin: 0pt 0.73%;}
+.span-40-3 { width: 6.15%; margin: 0pt 0.73%;}
+.span-40-4 { width: 8.68%; margin: 0pt 0.73%;}
+.span-40-5 { width: 11.22%; margin: 0pt 0.73%;}
+.span-40-6 { width: 13.76%; margin: 0pt 0.73%;}
+.span-40-7 { width: 16.29%; margin: 0pt 0.73%;}
+.span-40-8 { width: 18.83%; margin: 0pt 0.73%;}
+.span-40-9 { width: 21.37%; margin: 0pt 0.73%;}
+.span-40-10 { width: 23.90%; margin: 0pt 0.73%;}
+.span-40-11 { width: 26.44%; margin: 0pt 0.73%;}
+.span-40-12 { width: 28.98%; margin: 0pt 0.73%;}
+.span-40-13 { width: 31.51%; margin: 0pt 0.73%;}
+.span-40-14 { width: 34.05%; margin: 0pt 0.73%;}
+.span-40-15 { width: 36.59%; margin: 0pt 0.73%;}
+.span-40-16 { width: 39.12%; margin: 0pt 0.73%;}
+.span-40-17 { width: 41.66%; margin: 0pt 0.73%;}
+.span-40-18 { width: 44.20%; margin: 0pt 0.73%;}
+.span-40-19 { width: 46.73%; margin: 0pt 0.73%;}
+.span-40-20 { width: 49.27%; margin: 0pt 0.73%;}
+.span-40-21 { width: 51.80%; margin: 0pt 0.73%;}
+.span-40-22 { width: 54.34%; margin: 0pt 0.73%;}
+.span-40-23 { width: 56.88%; margin: 0pt 0.73%;}
+.span-40-24 { width: 59.41%; margin: 0pt 0.73%;}
+.span-40-25 { width: 61.95%; margin: 0pt 0.73%;}
+.span-40-26 { width: 64.49%; margin: 0pt 0.73%;}
+.span-40-27 { width: 67.02%; margin: 0pt 0.73%;}
+.span-40-28 { width: 69.56%; margin: 0pt 0.73%;}
+.span-40-29 { width: 72.10%; margin: 0pt 0.73%;}
+.span-40-30 { width: 74.63%; margin: 0pt 0.73%;}
+.span-40-31 { width: 77.17%; margin: 0pt 0.73%;}
+.span-40-32 { width: 79.71%; margin: 0pt 0.73%;}
+.span-40-33 { width: 82.24%; margin: 0pt 0.73%;}
+.span-40-34 { width: 84.78%; margin: 0pt 0.73%;}
+.span-40-35 { width: 87.32%; margin: 0pt 0.73%;}
+.span-40-36 { width: 89.85%; margin: 0pt 0.73%;}
+.span-40-37 { width: 92.39%; margin: 0pt 0.73%;}
+.span-40-38 { width: 94.93%; margin: 0pt 0.73%;}
+.span-40-39 { width: 97.46%; margin: 0pt 0.73%;}
+.span-40-40 { width: 100.00%; margin: 0pt 0.73%;}
+
+.append-40-1 { padding-right: 2.54%; }
+.append-40-2 { padding-right: 5.07%; }
+.append-40-3 { padding-right: 7.61%; }
+.append-40-4 { padding-right: 10.15%; }
+.append-40-5 { padding-right: 12.68%; }
+.append-40-6 { padding-right: 15.22%; }
+.append-40-7 { padding-right: 17.76%; }
+.append-40-8 { padding-right: 20.29%; }
+.append-40-9 { padding-right: 22.83%; }
+.append-40-10 { padding-right: 25.37%; }
+.append-40-11 { padding-right: 27.90%; }
+.append-40-12 { padding-right: 30.44%; }
+.append-40-13 { padding-right: 32.98%; }
+.append-40-14 { padding-right: 35.51%; }
+.append-40-15 { padding-right: 38.05%; }
+.append-40-16 { padding-right: 40.59%; }
+.append-40-17 { padding-right: 43.12%; }
+.append-40-18 { padding-right: 45.66%; }
+.append-40-19 { padding-right: 48.20%; }
+.append-40-20 { padding-right: 50.73%; }
+.append-40-21 { padding-right: 53.27%; }
+.append-40-22 { padding-right: 55.80%; }
+.append-40-23 { padding-right: 58.34%; }
+.append-40-24 { padding-right: 60.88%; }
+.append-40-25 { padding-right: 63.41%; }
+.append-40-26 { padding-right: 65.95%; }
+.append-40-27 { padding-right: 68.49%; }
+.append-40-28 { padding-right: 71.02%; }
+.append-40-29 { padding-right: 73.56%; }
+.append-40-30 { padding-right: 76.10%; }
+.append-40-31 { padding-right: 78.63%; }
+.append-40-32 { padding-right: 81.17%; }
+.append-40-33 { padding-right: 83.71%; }
+.append-40-34 { padding-right: 86.24%; }
+.append-40-35 { padding-right: 88.78%; }
+.append-40-36 { padding-right: 91.32%; }
+.append-40-37 { padding-right: 93.85%; }
+.append-40-38 { padding-right: 96.39%; }
+.append-40-39 { padding-right: 98.93%; }
+
+.prepend-40-1 { padding-left: 2.54%; }
+.prepend-40-2 { padding-left: 5.07%; }
+.prepend-40-3 { padding-left: 7.61%; }
+.prepend-40-4 { padding-left: 10.15%; }
+.prepend-40-5 { padding-left: 12.68%; }
+.prepend-40-6 { padding-left: 15.22%; }
+.prepend-40-7 { padding-left: 17.76%; }
+.prepend-40-8 { padding-left: 20.29%; }
+.prepend-40-9 { padding-left: 22.83%; }
+.prepend-40-10 { padding-left: 25.37%; }
+.prepend-40-11 { padding-left: 27.90%; }
+.prepend-40-12 { padding-left: 30.44%; }
+.prepend-40-13 { padding-left: 32.98%; }
+.prepend-40-14 { padding-left: 35.51%; }
+.prepend-40-15 { padding-left: 38.05%; }
+.prepend-40-16 { padding-left: 40.59%; }
+.prepend-40-17 { padding-left: 43.12%; }
+.prepend-40-18 { padding-left: 45.66%; }
+.prepend-40-19 { padding-left: 48.20%; }
+.prepend-40-20 { padding-left: 50.73%; }
+.prepend-40-21 { padding-left: 53.27%; }
+.prepend-40-22 { padding-left: 55.80%; }
+.prepend-40-23 { padding-left: 58.34%; }
+.prepend-40-24 { padding-left: 60.88%; }
+.prepend-40-25 { padding-left: 63.41%; }
+.prepend-40-26 { padding-left: 65.95%; }
+.prepend-40-27 { padding-left: 68.49%; }
+.prepend-40-28 { padding-left: 71.02%; }
+.prepend-40-29 { padding-left: 73.56%; }
+.prepend-40-30 { padding-left: 76.10%; }
+.prepend-40-31 { padding-left: 78.63%; }
+.prepend-40-32 { padding-left: 81.17%; }
+.prepend-40-33 { padding-left: 83.71%; }
+.prepend-40-34 { padding-left: 86.24%; }
+.prepend-40-35 { padding-left: 88.78%; }
+.prepend-40-36 { padding-left: 91.32%; }
+.prepend-40-37 { padding-left: 93.85%; }
+.prepend-40-38 { padding-left: 96.39%; }
+.prepend-40-39 { padding-left: 98.93%; }
+
+/* Add this class to a column if you want a border on its
+   right hand side. This should be customized to fit your needs. */
+.border-2 { padding-right:  17.57%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-3 { padding-right:  10.32%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-4 { padding-right:  7.30%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-5 { padding-right:  5.65%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-6 { padding-right:  4.61%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-7 { padding-right:  3.89%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-8 { padding-right:  3.37%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-9 { padding-right:  2.97%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-10 { padding-right:  2.65%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-11 { padding-right:  2.40%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-12 { padding-right:  2.19%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-13 { padding-right:  2.01%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-14 { padding-right:  1.86%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-15 { padding-right:  1.73%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-16 { padding-right:  1.62%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-17 { padding-right:  1.52%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-18 { padding-right:  1.43%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-19 { padding-right:  1.36%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-20 { padding-right:  1.29%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-21 { padding-right:  1.22%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-22 { padding-right:  1.17%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-23 { padding-right:  1.11%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-24 { padding-right:  1.07%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-25 { padding-right:  1.02%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-26 { padding-right:  0.98%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-27 { padding-right:  0.95%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-28 { padding-right:  0.91%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-29 { padding-right:  0.88%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-30 { padding-right:  0.85%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-31 { padding-right:  0.82%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-32 { padding-right:  0.80%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-33 { padding-right:  0.77%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-34 { padding-right:  0.75%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-35 { padding-right:  0.73%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-36 { padding-right:  0.71%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-37 { padding-right:  0.69%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-38 { padding-right:  0.67%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-39 { padding-right:  0.65%; margin-right: 0; border-right: 0.84em solid #eee; }
+.border-40 { padding-right:  0.63%; margin-right: 0; border-right: 0.84em solid #eee; }
+
+/* The first and last elements in a multi-column
+   block needs one of these classes each. */
+.first  { margin-left: 0pt; }
+.last   { margin-right: 0pt; }
+
+/* Use a .box to create a padded box inside a column.
+   Sticking to 18px wide gaps since that's the baseline. */
+.box { padding: 1.5em; margin-bottom: 1.5em; background: #f0f0f0; }
+
+/* --------------------------------------------------------------
+   Images
+   -------------------------------------------------------------- */
+
+/* Remember the baseline (typography.css). */
+img { margin: 0; display: inline; vertical-align: middle;}
+
+.pull-2-1  { margin-left: -70.27%; }
+.pull-2-2  { margin-left: -140.54%; }
+.pull-2-3  { margin-left: -210.81%; }
+
+.push-2-1  { margin: 0 -118.92% 0 48.65%; float: right; }
+.push-2-2  { margin: 0 -189.19% 0 48.65%; float: right; }
+.push-2-3  { margin: 0 -259.46% 0 48.65%; float: right; }
+
+.pull-3-1  { margin-left: -41.27%; }
+.pull-3-2  { margin-left: -82.54%; }
+.pull-3-3  { margin-left: -123.81%; }
+
+.push-3-1  { margin: 0 -69.84% 0 28.57%; float: right; }
+.push-3-2  { margin: 0 -111.11% 0 28.57%; float: right; }
+.push-3-3  { margin: 0 -152.38% 0 28.57%; float: right; }
+
+.pull-4-1  { margin-left: -29.21%; }
+.pull-4-2  { margin-left: -58.43%; }
+.pull-4-3  { margin-left: -87.64%; }
+
+.push-4-1  { margin: 0 -49.44% 0 20.22%; float: right; }
+.push-4-2  { margin: 0 -78.65% 0 20.22%; float: right; }
+.push-4-3  { margin: 0 -107.87% 0 20.22%; float: right; }
+
+.pull-5-1  { margin-left: -22.61%; }
+.pull-5-2  { margin-left: -45.22%; }
+.pull-5-3  { margin-left: -67.83%; }
+
+.push-5-1  { margin: 0 -38.26% 0 15.65%; float: right; }
+.push-5-2  { margin: 0 -60.87% 0 15.65%; float: right; }
+.push-5-3  { margin: 0 -83.48% 0 15.65%; float: right; }
+
+.pull-6-1  { margin-left: -18.44%; }
+.pull-6-2  { margin-left: -36.88%; }
+.pull-6-3  { margin-left: -55.32%; }
+
+.push-6-1  { margin: 0 -31.21% 0 12.77%; float: right; }
+.push-6-2  { margin: 0 -49.65% 0 12.77%; float: right; }
+.push-6-3  { margin: 0 -68.09% 0 12.77%; float: right; }
+
+.pull-7-1  { margin-left: -15.57%; }
+.pull-7-2  { margin-left: -31.14%; }
+.pull-7-3  { margin-left: -46.71%; }
+
+.push-7-1  { margin: 0 -26.35% 0 10.78%; float: right; }
+.push-7-2  { margin: 0 -41.92% 0 10.78%; float: right; }
+.push-7-3  { margin: 0 -57.49% 0 10.78%; float: right; }
+
+.pull-8-1  { margin-left: -13.47%; }
+.pull-8-2  { margin-left: -26.94%; }
+.pull-8-3  { margin-left: -40.41%; }
+
+.push-8-1  { margin: 0 -22.80% 0 9.33%; float: right; }
+.push-8-2  { margin: 0 -36.27% 0 9.33%; float: right; }
+.push-8-3  { margin: 0 -49.74% 0 9.33%; float: right; }
+
+.pull-9-1  { margin-left: -11.87%; }
+.pull-9-2  { margin-left: -23.74%; }
+.pull-9-3  { margin-left: -35.62%; }
+
+.push-9-1  { margin: 0 -20.09% 0 8.22%; float: right; }
+.push-9-2  { margin: 0 -31.96% 0 8.22%; float: right; }
+.push-9-3  { margin: 0 -43.84% 0 8.22%; float: right; }
+
+.pull-10-1  { margin-left: -10.61%; }
+.pull-10-2  { margin-left: -21.22%; }
+.pull-10-3  { margin-left: -31.84%; }
+
+.push-10-1  { margin: 0 -17.96% 0 7.35%; float: right; }
+.push-10-2  { margin: 0 -28.57% 0 7.35%; float: right; }
+.push-10-3  { margin: 0 -39.18% 0 7.35%; float: right; }
+
+.pull-11-1  { margin-left: -9.59%; }
+.pull-11-2  { margin-left: -19.19%; }
+.pull-11-3  { margin-left: -28.78%; }
+
+.push-11-1  { margin: 0 -16.24% 0 6.64%; float: right; }
+.push-11-2  { margin: 0 -25.83% 0 6.64%; float: right; }
+.push-11-3  { margin: 0 -35.42% 0 6.64%; float: right; }
+
+.pull-12-1  { margin-left: -8.75%; }
+.pull-12-2  { margin-left: -17.51%; }
+.pull-12-3  { margin-left: -26.26%; }
+
+.push-12-1  { margin: 0 -14.81% 0 6.06%; float: right; }
+.push-12-2  { margin: 0 -23.57% 0 6.06%; float: right; }
+.push-12-3  { margin: 0 -32.32% 0 6.06%; float: right; }
+
+.pull-13-1  { margin-left: -8.05%; }
+.pull-13-2  { margin-left: -16.10%; }
+.pull-13-3  { margin-left: -24.15%; }
+
+.push-13-1  { margin: 0 -13.62% 0 5.57%; float: right; }
+.push-13-2  { margin: 0 -21.67% 0 5.57%; float: right; }
+.push-13-3  { margin: 0 -29.72% 0 5.57%; float: right; }
+
+.pull-14-1  { margin-left: -7.45%; }
+.pull-14-2  { margin-left: -14.90%; }
+.pull-14-3  { margin-left: -22.35%; }
+
+.push-14-1  { margin: 0 -12.61% 0 5.16%; float: right; }
+.push-14-2  { margin: 0 -20.06% 0 5.16%; float: right; }
+.push-14-3  { margin: 0 -27.51% 0 5.16%; float: right; }
+
+.pull-15-1  { margin-left: -6.93%; }
+.pull-15-2  { margin-left: -13.87%; }
+.pull-15-3  { margin-left: -20.80%; }
+
+.push-15-1  { margin: 0 -11.73% 0 4.80%; float: right; }
+.push-15-2  { margin: 0 -18.67% 0 4.80%; float: right; }
+.push-15-3  { margin: 0 -25.60% 0 4.80%; float: right; }
+
+.pull-16-1  { margin-left: -6.48%; }
+.pull-16-2  { margin-left: -12.97%; }
+.pull-16-3  { margin-left: -19.45%; }
+
+.push-16-1  { margin: 0 -10.97% 0 4.49%; float: right; }
+.push-16-2  { margin: 0 -17.46% 0 4.49%; float: right; }
+.push-16-3  { margin: 0 -23.94% 0 4.49%; float: right; }
+
+.pull-17-1  { margin-left: -6.09%; }
+.pull-17-2  { margin-left: -12.18%; }
+.pull-17-3  { margin-left: -18.27%; }
+
+.push-17-1  { margin: 0 -10.30% 0 4.22%; float: right; }
+.push-17-2  { margin: 0 -16.39% 0 4.22%; float: right; }
+.push-17-3  { margin: 0 -22.48% 0 4.22%; float: right; }
+
+.pull-18-1  { margin-left: -5.74%; }
+.pull-18-2  { margin-left: -11.48%; }
+.pull-18-3  { margin-left: -17.22%; }
+
+.push-18-1  { margin: 0 -9.71% 0 3.97%; float: right; }
+.push-18-2  { margin: 0 -15.45% 0 3.97%; float: right; }
+.push-18-3  { margin: 0 -21.19% 0 3.97%; float: right; }
+
+.pull-19-1  { margin-left: -5.43%; }
+.pull-19-2  { margin-left: -10.86%; }
+.pull-19-3  { margin-left: -16.28%; }
+
+.push-19-1  { margin: 0 -9.19% 0 3.76%; float: right; }
+.push-19-2  { margin: 0 -14.61% 0 3.76%; float: right; }
+.push-19-3  { margin: 0 -20.04% 0 3.76%; float: right; }
+
+.pull-20-1  { margin-left: -5.15%; }
+.pull-20-2  { margin-left: -10.30%; }
+.pull-20-3  { margin-left: -15.45%; }
+
+.push-20-1  { margin: 0 -8.71% 0 3.56%; float: right; }
+.push-20-2  { margin: 0 -13.86% 0 3.56%; float: right; }
+.push-20-3  { margin: 0 -19.01% 0 3.56%; float: right; }
+
+.pull-21-1  { margin-left: -4.90%; }
+.pull-21-2  { margin-left: -9.79%; }
+.pull-21-3  { margin-left: -14.69%; }
+
+.push-21-1  { margin: 0 -8.29% 0 3.39%; float: right; }
+.push-21-2  { margin: 0 -13.18% 0 3.39%; float: right; }
+.push-21-3  { margin: 0 -18.08% 0 3.39%; float: right; }
+
+.pull-22-1  { margin-left: -4.67%; }
+.pull-22-2  { margin-left: -9.34%; }
+.pull-22-3  { margin-left: -14.00%; }
+
+.push-22-1  { margin: 0 -7.90% 0 3.23%; float: right; }
+.push-22-2  { margin: 0 -12.57% 0 3.23%; float: right; }
+.push-22-3  { margin: 0 -17.24% 0 3.23%; float: right; }
+
+.pull-23-1  { margin-left: -4.46%; }
+.pull-23-2  { margin-left: -8.92%; }
+.pull-23-3  { margin-left: -13.38%; }
+
+.push-23-1  { margin: 0 -7.55% 0 3.09%; float: right; }
+.push-23-2  { margin: 0 -12.01% 0 3.09%; float: right; }
+.push-23-3  { margin: 0 -16.47% 0 3.09%; float: right; }
+
+.pull-24-1  { margin-left: -4.27%; }
+.pull-24-2  { margin-left: -8.54%; }
+.pull-24-3  { margin-left: -12.81%; }
+
+.push-24-1  { margin: 0 -7.22% 0 2.96%; float: right; }
+.push-24-2  { margin: 0 -11.49% 0 2.96%; float: right; }
+.push-24-3  { margin: 0 -15.76% 0 2.96%; float: right; }
+
+.pull-25-1  { margin-left: -4.09%; }
+.pull-25-2  { margin-left: -8.19%; }
+.pull-25-3  { margin-left: -12.28%; }
+
+.push-25-1  { margin: 0 -6.93% 0 2.83%; float: right; }
+.push-25-2  { margin: 0 -11.02% 0 2.83%; float: right; }
+.push-25-3  { margin: 0 -15.12% 0 2.83%; float: right; }
+
+.pull-26-1  { margin-left: -3.93%; }
+.pull-26-2  { margin-left: -7.87%; }
+.pull-26-3  { margin-left: -11.80%; }
+
+.push-26-1  { margin: 0 -6.66% 0 2.72%; float: right; }
+.push-26-2  { margin: 0 -10.59% 0 2.72%; float: right; }
+.push-26-3  { margin: 0 -14.52% 0 2.72%; float: right; }
+
+.pull-27-1  { margin-left: -3.78%; }
+.pull-27-2  { margin-left: -7.57%; }
+.pull-27-3  { margin-left: -11.35%; }
+
+.push-27-1  { margin: 0 -6.40% 0 2.62%; float: right; }
+.push-27-2  { margin: 0 -10.19% 0 2.62%; float: right; }
+.push-27-3  { margin: 0 -13.97% 0 2.62%; float: right; }
+
+.pull-28-1  { margin-left: -3.65%; }
+.pull-28-2  { margin-left: -7.29%; }
+.pull-28-3  { margin-left: -10.94%; }
+
+.push-28-1  { margin: 0 -6.17% 0 2.52%; float: right; }
+.push-28-2  { margin: 0 -9.82% 0 2.52%; float: right; }
+.push-28-3  { margin: 0 -13.46% 0 2.52%; float: right; }
+
+.pull-29-1  { margin-left: -3.52%; }
+.pull-29-2  { margin-left: -7.04%; }
+.pull-29-3  { margin-left: -10.55%; }
+
+.push-29-1  { margin: 0 -5.95% 0 2.44%; float: right; }
+.push-29-2  { margin: 0 -9.47% 0 2.44%; float: right; }
+.push-29-3  { margin: 0 -12.99% 0 2.44%; float: right; }
+
+.pull-30-1  { margin-left: -3.40%; }
+.pull-30-2  { margin-left: -6.80%; }
+.pull-30-3  { margin-left: -10.20%; }
+
+.push-30-1  { margin: 0 -5.75% 0 2.35%; float: right; }
+.push-30-2  { margin: 0 -9.15% 0 2.35%; float: right; }
+.push-30-3  { margin: 0 -12.55% 0 2.35%; float: right; }
+
+.pull-31-1  { margin-left: -3.29%; }
+.pull-31-2  { margin-left: -6.57%; }
+.pull-31-3  { margin-left: -9.86%; }
+
+.push-31-1  { margin: 0 -5.56% 0 2.28%; float: right; }
+.push-31-2  { margin: 0 -8.85% 0 2.28%; float: right; }
+.push-31-3  { margin: 0 -12.14% 0 2.28%; float: right; }
+
+.pull-32-1  { margin-left: -3.18%; }
+.pull-32-2  { margin-left: -6.36%; }
+.pull-32-3  { margin-left: -9.55%; }
+
+.push-32-1  { margin: 0 -5.39% 0 2.20%; float: right; }
+.push-32-2  { margin: 0 -8.57% 0 2.20%; float: right; }
+.push-32-3  { margin: 0 -11.75% 0 2.20%; float: right; }
+
+.pull-33-1  { margin-left: -3.08%; }
+.pull-33-2  { margin-left: -6.17%; }
+.pull-33-3  { margin-left: -9.25%; }
+
+.push-33-1  { margin: 0 -5.22% 0 2.14%; float: right; }
+.push-33-2  { margin: 0 -8.30% 0 2.14%; float: right; }
+.push-33-3  { margin: 0 -11.39% 0 2.14%; float: right; }
+
+.pull-34-1  { margin-left: -2.99%; }
+.pull-34-2  { margin-left: -5.98%; }
+.pull-34-3  { margin-left: -8.98%; }
+
+.push-34-1  { margin: 0 -5.06% 0 2.07%; float: right; }
+.push-34-2  { margin: 0 -8.06% 0 2.07%; float: right; }
+.push-34-3  { margin: 0 -11.05% 0 2.07%; float: right; }
+
+.pull-35-1  { margin-left: -2.91%; }
+.pull-35-2  { margin-left: -5.81%; }
+.pull-35-3  { margin-left: -8.72%; }
+
+.push-35-1  { margin: 0 -4.92% 0 2.01%; float: right; }
+.push-35-2  { margin: 0 -7.82% 0 2.01%; float: right; }
+.push-35-3  { margin: 0 -10.73% 0 2.01%; float: right; }
+
+.pull-36-1  { margin-left: -2.82%; }
+.pull-36-2  { margin-left: -5.65%; }
+.pull-36-3  { margin-left: -8.47%; }
+
+.push-36-1  { margin: 0 -4.78% 0 1.95%; float: right; }
+.push-36-2  { margin: 0 -7.60% 0 1.95%; float: right; }
+.push-36-3  { margin: 0 -10.42% 0 1.95%; float: right; }
+
+.pull-37-1  { margin-left: -2.75%; }
+.pull-37-2  { margin-left: -5.49%; }
+.pull-37-3  { margin-left: -8.24%; }
+
+.push-37-1  { margin: 0 -4.65% 0 1.90%; float: right; }
+.push-37-2  { margin: 0 -7.39% 0 1.90%; float: right; }
+.push-37-3  { margin: 0 -10.14% 0 1.90%; float: right; }
+
+.pull-38-1  { margin-left: -2.67%; }
+.pull-38-2  { margin-left: -5.34%; }
+.pull-38-3  { margin-left: -8.02%; }
+
+.push-38-1  { margin: 0 -4.52% 0 1.85%; float: right; }
+.push-38-2  { margin: 0 -7.19% 0 1.85%; float: right; }
+.push-38-3  { margin: 0 -9.87% 0 1.85%; float: right; }
+
+.pull-39-1  { margin-left: -2.60%; }
+.pull-39-2  { margin-left: -5.21%; }
+.pull-39-3  { margin-left: -7.81%; }
+
+.push-39-1  { margin: 0 -4.40% 0 1.80%; float: right; }
+.push-39-2  { margin: 0 -7.01% 0 1.80%; float: right; }
+.push-39-3  { margin: 0 -9.61% 0 1.80%; float: right; }
+
+.pull-40-1  { margin-left: -2.54%; }
+.pull-40-2  { margin-left: -5.07%; }
+.pull-40-3  { margin-left: -7.61%; }
+
+.push-40-1  { margin: 0 -4.29% 0 1.76%; float: right; }
+.push-40-2  { margin: 0 -6.83% 0 1.76%; float: right; }
+.push-40-3  { margin: 0 -9.37% 0 1.76%; float: right; }
+

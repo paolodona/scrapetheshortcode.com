@@ -1,0 +1,92 @@
+/* -------------------------------------------------------------- 
+   Tables
+   -------------------------------------------------------------- */
+
+table {
+  width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 1.5em;
+}
+
+table.with_option {
+  margin-bottom: 0pt;
+}
+
+th {
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  color: #626262;
+  background: #DFDFDF url(../../images/menu-bg.png) repeat-x scroll;
+  padding: 0.25em 0.417em;
+  border-bottom: 1px solid #C0C0C0;
+}
+
+td {
+	padding: 0.25em 0.417em;
+  vertical-align: top;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+/* -------------------------------------------------------------- 
+   Flat table ie: people basecamp 
+   -------------------------------------------------------------- */
+
+table.flat td {
+	vertical-align: top;
+	border: 1px solid #C0C0C0;
+  padding: 0;
+}
+
+table.flat th {
+	vertical-align: top;
+	padding: 0;
+	border: 1px solid #C0C0C0;
+ 	background-color: #EFEFEF;
+	font-weight: bold;
+}
+
+table.flat td.blank {
+ 	border: none;
+}
+
+ul.intable {
+	margin-bottom: 0pt;
+}
+
+
+/* -------------------------------------------------------------- 
+   Option
+   -------------------------------------------------------------- */
+
+div.table_option {
+  padding: 0.5em 0.417em;
+  margin-bottom: 1.5em;
+  font-size: 0.833em;
+  background-color: #EFEFEF;
+}
+
+div.table_option a {
+  background-color: #C0C0C0;
+  border:1px solid #626262;
+  color:#626262;
+  margin:0pt 2px;
+  padding:1px 4px;
+  text-decoration:none;
+}
+
+div.table_option span {
+  background-color: #EFEFEF;
+  border:1px solid #626262;
+  color:#626262;
+  margin:0pt 2px;
+  padding:1px 4px;
+}
+
+div.table_option span.current {
+  background:#626262;
+  border:1px solid #C0C0C0;
+  color: #C0C0C0;
+  font-weight:bold;
+  margin:0pt 2px;
+}
